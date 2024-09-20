@@ -200,6 +200,38 @@ Links found in file ./file.py: https://www.mirea.ru
 ## Задача 7
 
 Написать программу для нахождения файлов-дубликатов (имеющих 1 или более копий содержимого) по заданному пути (и подкаталогам).
+```
+#!/bin/bash
+
+tree
+
+touch file_dup.txt
+mkdir folder
+cp file_dup.txt folder
+find . -type f -iname "*_dup.txt"
+```
+
+```
+localhost:~# bash zad7.sh
+.
+├── bench.py
+├── file.c
+├── file.js
+├── file.py
+├── file_dup.txt
+├── folder
+│   └── file_dup.txt
+├── hello.c
+├── hello.js
+├── readme.txt
+├── zad5.sh
+├── zad6.sh
+└── zad7.sh
+ 
+0 directory, 12 files
+./file_dup.txt
+./folder/file_dup.txt
+```
 
 ## Задача 8
 
