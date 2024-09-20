@@ -71,7 +71,6 @@ echo "+${line}+"
 ```
 
 ```
-bash zadacha3.sh 
 +--------------------------+
 | Hello from Turkmenistan! |
 +--------------------------+
