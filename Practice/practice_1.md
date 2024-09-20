@@ -55,12 +55,26 @@ awk '{print $2, $1}' /etc/protocols | sort -nr | head -n 7
 ## Задача 3
 
 Написать программу banner средствами bash для вывода текстов, как в следующем примере (размер баннера должен меняться!):
+```
+#!/bin/bash
+
+text=$*
+length_txt=${#text}
+
+for a in $(seq 1 $((length_txt + 26))); do
+    line+="-"
+done
+
+echo "+${line}+"
+echo "| Hello from Turkmenistan! |"
+echo "+${line}+"
+```
 
 ```
-[root@localhost ~]# ./banner "Hello from RTU MIREA!"
-+-----------------------+
-| Hello from RTU MIREA! |
-+-----------------------+
+bash zadacha3.sh 
++--------------------------+
+| Hello from Turkmenistan! |
++--------------------------+
 ```
 
 Перед отправкой решения проверьте его в ShellCheck на предупреждения.
