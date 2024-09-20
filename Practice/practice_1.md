@@ -76,16 +76,29 @@ echo "+${line}+"
 +--------------------------+
 ```
 
-Перед отправкой решения проверьте его в ShellCheck на предупреждения.
 
 ## Задача 4
 
 Написать программу для вывода всех идентификаторов (по правилам C/C++ или Java) в файле (без повторений).
+```
+#!/bin/bash
 
-Пример для hello.c:
+file="$1"
+
+id=$(grep -o -E '\b[a-zA-Z]*\b' "$file" | sort -u)
+
+grep -oE '\b[a-zA-Z_][a-zA-Z0-9_]*\b' hello.c | grep -vE '\b(int|void|return|if|else|for|while|include|stdio.h)\b' | sort | uniq 
+```
+
 
 ```
-h hello include int main n printf return stdio void world
+h
+hello 
+main
+n
+printf
+stdio
+world
 ```
 
 ## Задача 5
