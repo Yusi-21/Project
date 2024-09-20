@@ -1,12 +1,38 @@
-# Практическое занятие №1. Введение, основы работы в командной строке
-
-П.Н. Советов, РТУ МИРЭА
-
-Научиться выполнять простые действия с файлами и каталогами в Linux из командной строки. Сравнить работу в командной строке Windows и Linux.
-
 ## Задача 1
 
 Вывести отсортированный в алфавитном порядке список имен пользователей в файле passwd (вам понадобится grep).
+grep '.*' /etc/passwd | cut -d: -f1 | sort
+
+```
+adm
+at
+bin
+cron
+cyrus
+daemon
+dhcp
+ftp
+games
+guest
+halt
+lp
+mail
+man
+news
+nobody
+ntp
+operator
+postmaster
+root
+shutdown
+smmsp
+squid
+sshd
+svn
+sync
+uucp
+vpopmail
+xfs
 
 ## Задача 2
 
