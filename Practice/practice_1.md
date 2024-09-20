@@ -236,7 +236,59 @@ localhost:~# bash zad7.sh
 ## Задача 8
 
 Написать программу, которая находит все файлы в данном каталоге с расширением, указанным в качестве аргумента и архивирует все эти файлы в архив tar.
+```
+#!/bin/bash
 
+touch file1.py file2.py file3.py
+tree
+
+find . -type f -iname "*.py"
+
+mkdir folder
+mv file1.py file2.py file3.py folder
+tree
+
+cd folder
+bzip2 file1.py file2.py file3.py
+
+ls -l
+```
+
+```
+localhost:~# bash zad8.sh
+.
+├── bench.py
+├── file1.py
+├── file2.py
+├── file3.py
+├── hello.c
+├── hello.js
+├── readme.txt
+└── zad8.sh
+ 
+0 directories, 8 files
+./bench.py
+./file1.py
+./file2.py
+./file3.py
+.
+├── bench.py
+├── folder
+│   ├── file1.py
+│   ├── file2.py
+│   └── file3.py
+├── hello.c
+├── hello.js
+├── readme.txt
+└── zad8.sh
+ 
+1 directory, 8 files
+total 12
+-rw-r--r--    1 root     root            14 Sep 20 21:13 file1.py.bz2
+-rw-r--r--    1 root     root            14 Sep 20 21:13 file2.py.bz2
+-rw-r--r--    1 root     root            14 Sep 20 21:13 file3.py.bz2
+
+```
 ## Задача 9
 
 Написать программу, которая заменяет в файле последовательности из 4 пробелов на символ табуляции. Входной и выходной файлы задаются аргументами.
