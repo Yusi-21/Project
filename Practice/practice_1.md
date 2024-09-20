@@ -105,13 +105,69 @@ world
 
 Написать программу для регистрации пользовательской команды (правильные права доступа и копирование в /usr/local/bin).
 
-Например, пусть программа называется reg:
+```
+#!/bin/bash
+
+ls -l
+touch usa.cpp
+echo " "
+
+ls -l
+chmod 766 usa.cpp
+echo " "
+ls -l
+
+sudo mv usa.cpp /usr/local/bin/   //здесь можно написать cp(copy) вместо mv(move),
+                                  //чтобы вывод было понятно написал mv
+cd /usr/local/bin/
+ls -l 
+```
 
 ```
-./reg banner
+localhost:~# bash zad5.sh
+total 20
+-rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
+-rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
+-rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
+-rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
+-rw-r--r--    1 root     root           141 Sep 20 20:47 zad5.sh
+ 
+total 20
+-rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
+-rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
+-rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
+-rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
+-rw-r--r--    1 root     root             0 Sep 20 20:47 usa.cpp    //создал 
+-rw-r--r--    1 root     root           141 Sep 20 20:47 zad5.sh
+ 
+total 20
+-rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
+-rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
+-rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
+-rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
+-rwxrw-rw-    1 root     root             0 Sep 20 20:47 usa.cpp    //поменял права доступа
+-rw-r--r--    1 root     root           141 Sep 20 20:47 zad5.sh
+total 4404
+-rwxr-xr-x    1 root     root         42500 Jul  5  2020 export_file
+-rwxr-xr-x    1 root     root        325844 Jul  6  2020 ffasn1dump
+-rwxr-xr-x    1 root     root        205012 Aug 17  2020 fldev
+lrwxrwxrwx    1 root     root             6 Jul  5  2020 qe -> qemacs
+-rwxr-xr-x    1 root     root        712292 Jul  5  2020 qemacs
+-rwxr-xr-x    1 root     root       1045720 Jul  5  2020 qjs
+-rwxr-xr-x    1 root     root        816284 Jul  5  2020 qjsc
+lrwxrwxrwx    1 root     root             3 Jul  5  2020 qjscalc -> qjs
+lrwxrwxrwx    1 root     root            11 Jul  5  2020 set_import_dir -> expor
+t_file
+-rwxr-xr-x    1 root     root         13404 Nov 21  2020 settime
+-rwxr-xr-x    1 root     root        267584 Jul  5  2020 tcc
+-rwxr-xr-x    1 root     root        678504 Jan  9  2021 temu
+-rwxr-xr-x    1 root     root         50268 Jul  5  2020 tinypi
+-rwxrw-rw-    1 root     root             0 Sep 20 20:47 usa.cpp   //переместил
+-rwxr-xr-x    1 root     root         45636 Jul  5  2020 vfagent
+-rwxr-xr-x    1 root     root         35304 Jul  5  2020 vflogin
+-rwxr-xr-x    1 root     root        204336 Jul  5  2020 vfsync
+-rwxr-xr-x    1 root     root         24360 Jul  5  2020 vmtime
 ```
-
-В результате для banner задаются правильные права доступа и сам banner копируется в /usr/local/bin.
 
 ## Задача 6
 
