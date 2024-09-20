@@ -172,6 +172,30 @@ t_file
 ## Задача 6
 
 Написать программу для проверки наличия комментария в первой строке файлов с расширением c, js и py.
+```
+#!/bin/bash
+
+find . -type f \( -name "*.c" -o -name "*.js" -o -name "*.py" \) | while read -r file; do
+    first_line=$(head -n 1 "$file")
+
+    if [[ $first_line == http*://* ]]; then
+        echo "Links found in file $file: $first_line"
+    else
+        echo "Links not found in file $file"
+    fi
+done
+```
+
+```
+localhost:~# bash zad6.sh
+Links not found in file ./hello.js
+Links not found in file ./hello.c
+Links not found in file ./bench.py
+Links not found in file ./.mozilla/firefox/j4k7jsk5.default-default/prefs.js
+Links found in file ./file.c: https://www.google.com
+Links found in file ./file.js: https://ya.ru
+Links found in file ./file.py: https://www.mirea.ru
+```
 
 ## Задача 7
 
