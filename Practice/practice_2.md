@@ -4,7 +4,7 @@
 
 Вывести служебную информацию о пакете matplotlib (Python). Разобрать основные элементы содержимого файла со служебной информацией из пакета. Как получить пакет без менеджера пакетов, прямо из репозитория?
 ```
-Перейдите по ссылке: ( https://colab.research.google.com/drive/1ln_HcwTevZzH7YP-3arso7VB9aZ2KeYT?hl=ru#scrollTo=h2H-O_LInAJ4 )
+Перейдите по ссылке: ( https://colab.research.google.com/drive/1ln_HcwTevZzH7YP-3arso7VB9aZ2KeYT?usp=sharing )
 
 или в файле "practice_2_1.ipynb"  можете посмотреть!
 ```
