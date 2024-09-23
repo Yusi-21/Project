@@ -39,18 +39,27 @@ Required-by: arviz, bigframes, datascience, fastai, geemap, imgaug, matplotlib-v
 ```
 
 ```
+# 1. Импорт и вывод информации о пакете matplotlib
 import matplotlib
 
-print(matplotlib.__version__)
-print(matplotlib.__file__)
+# Версия пакета
+print("Версия matplotlib:", matplotlib.__version__)
+
+# Служебная информация
+print("Служебная информация о пакете matplotlib:")
 print(matplotlib.__doc__)
+
+# 2. Клонируем репозиторий matplotlib
+!git clone https://github.com/matplotlib/matplotlib.git
+
+# 3. Устанавливаем matplotlib из клонированного репозитория
+%cd matplotlib
+!pip install .
 ```
 
 ```
-3.7.1
-
-/usr/local/lib/python3.10/dist-packages/matplotlib/__init__.py
-
+Версия matplotlib: 3.7.1
+Служебная информация о пакете matplotlib:
 
 An object-oriented plotting library.
 
@@ -153,6 +162,42 @@ developed and maintained by a host of others.
 
 Occasionally the internal documentation (python docstrings) will refer
 to MATLAB®, a registered trademark of The MathWorks, Inc.
+
+
+Cloning into 'matplotlib'...
+remote: Enumerating objects: 330379, done.
+remote: Counting objects: 100% (57/57), done.
+remote: Compressing objects: 100% (45/45), done.
+remote: Total 330379 (delta 20), reused 36 (delta 12), pack-reused 330322 (from 1)
+Receiving objects: 100% (330379/330379), 444.25 MiB | 24.54 MiB/s, done.
+Resolving deltas: 100% (229335/229335), done.
+/content/matplotlib
+Processing /content/matplotlib
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+  Preparing metadata (pyproject.toml) ... done
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib==3.10.0.dev737+g0988fdaeca) (1.3.0)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib==3.10.0.dev737+g0988fdaeca) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib==3.10.0.dev737+g0988fdaeca) (4.53.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib==3.10.0.dev737+g0988fdaeca) (1.4.7)
+Requirement already satisfied: numpy>=1.23 in /usr/local/lib/python3.10/dist-packages (from matplotlib==3.10.0.dev737+g0988fdaeca) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib==3.10.0.dev737+g0988fdaeca) (24.1)
+Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.10/dist-packages (from matplotlib==3.10.0.dev737+g0988fdaeca) (10.4.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib==3.10.0.dev737+g0988fdaeca) (3.1.4)
+Requirement already satisfied: python-dateutil>=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib==3.10.0.dev737+g0988fdaeca) (2.8.2)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil>=2.7->matplotlib==3.10.0.dev737+g0988fdaeca) (1.16.0)
+Building wheels for collected packages: matplotlib
+  Building wheel for matplotlib (pyproject.toml) ... done
+  Created wheel for matplotlib: filename=matplotlib-3.10.0.dev737+g0988fdaeca-cp310-cp310-linux_x86_64.whl size=8393645 sha256=31adc139b4e0dd8119821b05e5fa9f2b9765915b5465d0ad89ffe1f3d70af460
+  Stored in directory: /tmp/pip-ephem-wheel-cache-axetvmbj/wheels/e3/c6/ba/12604b5e54fb221042954e8cd7c062e550f8bfa87810175fd7
+Successfully built matplotlib
+Installing collected packages: matplotlib
+  Attempting uninstall: matplotlib
+    Found existing installation: matplotlib 3.7.1
+    Uninstalling matplotlib-3.7.1:
+      Successfully uninstalled matplotlib-3.7.1
+Successfully installed matplotlib-3.10.0.dev737+g0988fdaeca
 ```
 ## Задача 2
 
