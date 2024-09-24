@@ -40,46 +40,11 @@
 ![happy_ticket](https://github.com/user-attachments/assets/c499ebd4-7694-4ba3-b356-ad3057bd82a3)
 
 ```
-Решено при помощи Google Colab-a можете посмотреть по ссылке:
-https://colab.research.google.com/drive/1dsWc_5G_EjEpP0mY9WHzTEv4ww6xwDaZ?usp=sharing
+Решено при помощи Google Colab (https://colab.research.google.com/drive/1dsWc_5G_EjEpP0mY9WHzTEv4ww6xwDaZ?usp=sharing)
 ```
-```
-# Создаем переменные
-x1 = Int('x1')
-x2 = Int('x2')
-x3 = Int('x3')
+![practice_2_4](https://github.com/user-attachments/assets/1d3255fd-56df-4962-a287-17a71451c029)
 
-# Создаем решатель
-solver = Solver()
 
-# Ограничение: цифры должны быть от 0 до 9
-solver.add(And(x1 >= 0, x1 <= 9))
-solver.add(And(x2 >= 0, x2 <= 9))
-solver.add(And(x3 >= 0, x3 <= 9))
-
-# Ограничение: все цифры должны быть различными
-solver.add(Distinct(x1, x2, x3))
-
-# Ограничение: сумма трех цифр равна 3
-solver.add(x1 + x2 + x3 == 3)
-
-# Решение задачи
-if solver.check() == sat:
-    model = solver.model()
-    print(f"Решение: x1 = {model[x1]}, x2 = {model[x2]}, x3 = {model[x3]}")
-else:
-    print("Решений нет")
-```
-
-```
-Collecting z3-solver
-  Downloading z3_solver-4.13.0.0-py2.py3-none-manylinux2014_x86_64.whl.metadata (757 bytes)
-Downloading z3_solver-4.13.0.0-py2.py3-none-manylinux2014_x86_64.whl (57.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.3/57.3 MB 9.6 MB/s eta 0:00:00
-Installing collected packages: z3-solver
-Successfully installed z3-solver-4.13.0.0
-Решение: x1 = 2, x2 = 0, x3 = 1
-```
 ## Задача 5
 
 Решить на MiniZinc задачу о зависимостях пакетов для рисунка, приведенного ниже.
