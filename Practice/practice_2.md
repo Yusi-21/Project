@@ -35,12 +35,12 @@
 Решить на MiniZinc задачу о счастливых билетах. Добавить ограничение на то, что все цифры билета должны быть различными (подсказка: используйте all_different). Найти минимальное решение для суммы 3 цифр.
 
 ```
-Решено с помощью MiniZinc
+Решено на MiniZinc
 ```
 ![happy_ticket](https://github.com/user-attachments/assets/c499ebd4-7694-4ba3-b356-ad3057bd82a3)
 
 ```
-Решено при помощи Google Colab (https://colab.research.google.com/drive/1dsWc_5G_EjEpP0mY9WHzTEv4ww6xwDaZ?usp=sharing)
+Решено на Google Colab (https://colab.research.google.com/drive/1dsWc_5G_EjEpP0mY9WHzTEv4ww6xwDaZ?usp=sharing)
 ```
 ![practice_2_4](https://github.com/user-attachments/assets/1d3255fd-56df-4962-a287-17a71451c029)
 
