@@ -35,43 +35,8 @@
 Решить на MiniZinc задачу о счастливых билетах. Добавить ограничение на то, что все цифры билета должны быть различными (подсказка: используйте all_different). Найти минимальное решение для суммы 3 цифр.
 
 ```
-include "globals.mzn";  % Подключение глобальных функций
-
-% Определяем 3 переменные для цифр билета
-var 0..9: x1;  % Первая цифра
-var 0..9: x2;  % Вторая цифра
-var 0..9: x3;  % Третья цифра
-
-% Ограничение на уникальные цифры
-constraint all_different([x1, x2, x3]);
-
-% Ограничение на сумму цифр
-constraint x1 + x2 + x3 = 3;
-
-% Определяем вывод
-output ["x1 = \(x1), x2 = \(x2), x3 = \(x3)"];
-
-% Минимизация суммы цифр
-solve minimize (x1 + x2 + x3);
-
+![happy_ticket](https://github.com/user-attachments/assets/40941718-2290-4fae-84c8-3a1bfa17f766)
 ```
-
-```
-
-￼
-Running happy_ticket.mzn
-675msec
-
-x1 = 2, x2 = 1, x3 = 0
-----------
-==========
-Finished in 675msec.
-
-![](https://github.com/Yusi-21/Project/blob/main/Practice/happy_ticket.jpg)
-
-```
-
-
 ```
 Решено при помощи Google Colab-a можете посмотреть по ссылке:
 https://colab.research.google.com/drive/1dsWc_5G_EjEpP0mY9WHzTEv4ww6xwDaZ?usp=sharing
