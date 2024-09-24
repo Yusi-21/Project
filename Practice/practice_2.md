@@ -67,6 +67,8 @@ x1 = 2, x2 = 1, x3 = 0
 ==========
 Finished in 675msec.
 
+![](https://github.com/Yusi-21/Project/blob/main/Practice/happy_ticket.jpg)
+
 ```
 
 
