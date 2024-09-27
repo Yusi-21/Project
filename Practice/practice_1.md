@@ -5,37 +5,8 @@
 ```
 grep '.*' /etc/passwd | cut -d: -f1 | sort
 ```
-```
-adm
-at
-bin
-cron
-cyrus
-daemon
-dhcp
-ftp
-games
-guest
-halt
-lp
-mail
-man
-news
-nobody
-ntp
-operator
-postmaster
-root
-shutdown
-smmsp
-squid
-sshd
-svn
-sync
-uucp
-vpopmail
-xfs
-```
+![Notes_240927_130748_4ce](https://github.com/user-attachments/assets/22dbdb0c-df89-4def-b912-1cd949d0cfcc)
+
 ## Задача 2
 
 Вывести данные /etc/protocols в отформатированном и отсортированном порядке для 7 наибольших портов, как показано в примере ниже:
