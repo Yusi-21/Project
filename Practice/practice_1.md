@@ -104,7 +104,7 @@ cp file_dup.txt folder
 find . -type f -iname "*_dup.txt"
 ```
 
-![Notes_240927_130956_97f](https://github.com/user-attachments/assets/6586840a-dcce-4336-89bf-605e1e806635)
+![Notes_240927_130942_e59](https://github.com/user-attachments/assets/9b7fe8e7-e40f-4485-a3cf-5fedf77909f1)
 
 ## Задача 8
 
