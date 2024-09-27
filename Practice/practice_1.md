@@ -47,17 +47,7 @@ id=$(grep -o -E '\b[a-zA-Z]*\b' "$file" | sort -u)
 
 grep -oE '\b[a-zA-Z_][a-zA-Z0-9_]*\b' hello.c | grep -vE '\b(int|void|return|if|else|for|while|include|stdio.h)\b' | sort | uniq 
 ```
-
-
-```
-h
-hello 
-main
-n
-printf
-stdio
-world
-```
+![Notes_240927_130840_41f](https://github.com/user-attachments/assets/a42de18c-27e7-48e6-ac0d-ad497a0910b3)
 
 ## Задача 5
 
@@ -80,52 +70,7 @@ sudo mv usa.cpp /usr/local/bin/   //здесь можно написать cp(co
 cd /usr/local/bin/
 ls -l 
 ```
-
-```
-localhost:~# bash zad5.sh
-total 20
--rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
--rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
--rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
--rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
--rw-r--r--    1 root     root           141 Sep 20 20:47 zad5.sh
- 
-total 20
--rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
--rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
--rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
--rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
--rw-r--r--    1 root     root             0 Sep 20 20:47 usa.cpp    //создал 
--rw-r--r--    1 root     root           141 Sep 20 20:47 zad5.sh
- 
-total 20
--rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
--rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
--rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
--rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
--rwxrw-rw-    1 root     root             0 Sep 20 20:47 usa.cpp    //поменял права доступа
--rw-r--r--    1 root     root           141 Sep 20 20:47 zad5.sh
-total 4404
--rwxr-xr-x    1 root     root         42500 Jul  5  2020 export_file
--rwxr-xr-x    1 root     root        325844 Jul  6  2020 ffasn1dump
--rwxr-xr-x    1 root     root        205012 Aug 17  2020 fldev
-lrwxrwxrwx    1 root     root             6 Jul  5  2020 qe -> qemacs
--rwxr-xr-x    1 root     root        712292 Jul  5  2020 qemacs
--rwxr-xr-x    1 root     root       1045720 Jul  5  2020 qjs
--rwxr-xr-x    1 root     root        816284 Jul  5  2020 qjsc
-lrwxrwxrwx    1 root     root             3 Jul  5  2020 qjscalc -> qjs
-lrwxrwxrwx    1 root     root            11 Jul  5  2020 set_import_dir -> expor
-t_file
--rwxr-xr-x    1 root     root         13404 Nov 21  2020 settime
--rwxr-xr-x    1 root     root        267584 Jul  5  2020 tcc
--rwxr-xr-x    1 root     root        678504 Jan  9  2021 temu
--rwxr-xr-x    1 root     root         50268 Jul  5  2020 tinypi
--rwxrw-rw-    1 root     root             0 Sep 20 20:47 usa.cpp   //переместил
--rwxr-xr-x    1 root     root         45636 Jul  5  2020 vfagent
--rwxr-xr-x    1 root     root         35304 Jul  5  2020 vflogin
--rwxr-xr-x    1 root     root        204336 Jul  5  2020 vfsync
--rwxr-xr-x    1 root     root         24360 Jul  5  2020 vmtime
-```
+![Notes_240927_130856_5d9](https://github.com/user-attachments/assets/a6631ff6-9e45-4e64-a407-2f5c8ef7d694)
 
 ## Задача 6
 
@@ -143,17 +88,7 @@ find . -type f \( -name "*.c" -o -name "*.js" -o -name "*.py" \) | while read -r
     fi
 done
 ```
-
-```
-localhost:~# bash zad6.sh
-Links not found in file ./hello.js
-Links not found in file ./hello.c
-Links not found in file ./bench.py
-Links not found in file ./.mozilla/firefox/j4k7jsk5.default-default/prefs.js
-Links found in file ./file.c: https://www.google.com
-Links found in file ./file.js: https://ya.ru
-Links found in file ./file.py: https://www.mirea.ru
-```
+![Notes_240927_130926_c6f](https://github.com/user-attachments/assets/bea575c2-f1d7-4272-9380-1cd21fdf704e)
 
 ## Задача 7
 
