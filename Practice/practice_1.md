@@ -14,15 +14,7 @@ grep '.*' /etc/passwd | cut -d: -f1 | sort
 awk '{print $2, $1}' /etc/protocols | sort -nr | head -n 7
 ```
 
-```
-103 pim
-98 encap
-94 ipip
-89 ospf
-81 vmtp
-73 rspf
-60 ipv6-opts
-```
+![Notes_240927_130810_95f](https://github.com/user-attachments/assets/83b11b05-763a-4f54-928f-f89c09f505ca)
 
 ## Задача 3
 
@@ -41,13 +33,7 @@ echo "+${line}+"
 echo "| Hello from Turkmenistan! |"
 echo "+${line}+"
 ```
-
-```
-+--------------------------+
-| Hello from Turkmenistan! |
-+--------------------------+
-```
-
+![Notes_240927_130826_b4c](https://github.com/user-attachments/assets/bebb87de-8998-471f-ba2e-15da235bebe3)
 
 ## Задача 4
 
