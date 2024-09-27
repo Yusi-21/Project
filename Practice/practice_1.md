@@ -103,28 +103,7 @@ mkdir folder
 cp file_dup.txt folder
 find . -type f -iname "*_dup.txt"
 ```
-
-```
-localhost:~# bash zad7.sh
-.
-├── bench.py
-├── file.c
-├── file.js
-├── file.py
-├── file_dup.txt
-├── folder
-│   └── file_dup.txt
-├── hello.c
-├── hello.js
-├── readme.txt
-├── zad5.sh
-├── zad6.sh
-└── zad7.sh
- 
-0 directory, 12 files
-./file_dup.txt
-./folder/file_dup.txt
-```
+![Notes_240927_130942_e59](https://github.com/user-attachments/assets/edd53d73-7415-4fa6-bd36-03575853748c)
 
 ## Задача 8
 
@@ -146,42 +125,8 @@ bzip2 file1.py file2.py file3.py
 
 ls -l
 ```
+![Notes_240927_130956_97f](https://github.com/user-attachments/assets/7e2c2e38-dd53-4c69-bf62-30b9d6973e02
 
-```
-localhost:~# bash zad8.sh
-.
-├── bench.py
-├── file1.py
-├── file2.py
-├── file3.py
-├── hello.c
-├── hello.js
-├── readme.txt
-└── zad8.sh
- 
-0 directories, 8 files
-./bench.py
-./file1.py
-./file2.py
-./file3.py
-.
-├── bench.py
-├── folder
-│   ├── file1.py
-│   ├── file2.py
-│   └── file3.py
-├── hello.c
-├── hello.js
-├── readme.txt
-└── zad8.sh
- 
-1 directory, 8 files
-total 12
--rw-r--r--    1 root     root            14 Sep 20 21:13 file1.py.bz2
--rw-r--r--    1 root     root            14 Sep 20 21:13 file2.py.bz2
--rw-r--r--    1 root     root            14 Sep 20 21:13 file3.py.bz2
-
-```
 ## Задача 9
 
 Написать программу, которая заменяет в файле последовательности из 4 пробелов на символ табуляции. Входной и выходной файлы задаются аргументами.
@@ -191,9 +136,6 @@ total 12
 echo -e "RTU\tMIREA\t-THE\tBEST\tUNIVERSITY"
 ```
 
-```
-localhost:~# bash zad9.sh
-RTU     MIREA   -THE    BEST    UNIVERSITY!
-```
+![Notes_240927_131018_351](https://github.com/user-attachments/assets/710567e5-0e1b-4789-82ae-474871e7371e)
 
 
