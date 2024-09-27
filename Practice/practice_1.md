@@ -126,7 +126,8 @@ bzip2 file1.py file2.py file3.py
 
 ls -l
 ```
-![Notes_240927_130956_97f](https://github.com/user-attachments/assets/7e2c2e38-dd53-4c69-bf62-30b9d6973e02
+![IMG_20240927_133622_921](https://github.com/user-attachments/assets/826e2580-b35b-43ad-b321-6aabc26c156d)
+
 
 ## Задача 9
 
