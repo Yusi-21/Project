@@ -103,7 +103,7 @@ mkdir folder
 cp file_dup.txt folder
 find . -type f -iname "*_dup.txt"
 ```
-![Notes_240927_130942_e59](https://github.com/user-attachments/assets/edd53d73-7415-4fa6-bd36-03575853748c)
+![Notes_240927_130956_97f](https://github.com/user-attachments/assets/6586840a-dcce-4336-89bf-605e1e806635)
 
 ## Задача 8
 
