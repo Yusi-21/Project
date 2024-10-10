@@ -47,9 +47,10 @@
 pipdeptree --packages matplotlib --graph-output dot > matplotlib_deps.dot
 ```
 ### Результат.
-Вот такой получился [граф](https://github.com/CloudVHS/Configurqation-1/blob/main/practice2/matplotlibgraph.png).
 
 <img width="717" alt="expressgraph" src="https://github.com/user-attachments/assets/1de174ba-4c2a-4b26-a2f9-99b54d15b807">
+
+<img width="719" alt="matplotlibgraph" src="https://github.com/user-attachments/assets/56ee71f5-2b9c-4323-84bf-3b03acea6267">
 
 ## Задача №4
 Изучить основы программирования в ограничениях. Установить MiniZinc, разобраться с основами его синтаксиса и работы в IDE.
