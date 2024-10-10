@@ -49,6 +49,8 @@ pipdeptree --packages matplotlib --graph-output dot > matplotlib_deps.dot
 ### Результат.
 Вот такой получился [граф](https://github.com/CloudVHS/Configurqation-1/blob/main/practice2/matplotlibgraph.png).
 
+<img width="717" alt="expressgraph" src="https://github.com/user-attachments/assets/1de174ba-4c2a-4b26-a2f9-99b54d15b807">
+
 ## Задача №4
 Изучить основы программирования в ограничениях. Установить MiniZinc, разобраться с основами его синтаксиса и работы в IDE.
 Решить на MiniZinc задачу о счастливых билетах. Добавить ограничение на то, что все цифры билета должны быть различными (подсказка: используйте all_different). Найти минимальное решение для суммы 3 цифр.
@@ -261,28 +263,6 @@ All dependencies for root are satisfied.
 ````
 
 # Практическое занятие №2. Менеджеры пакетов
-
-## Задача 1
-
-Вывести служебную информацию о пакете matplotlib (Python). Разобрать основные элементы содержимого файла со служебной информацией из пакета. Как получить пакет без менеджера пакетов, прямо из репозитория?
-```
-Перейдите по ссылке: ( https://colab.research.google.com/drive/1ln_HcwTevZzH7YP-3arso7VB9aZ2KeYT?usp=sharing )
-
-или в файле "practice_2_1.ipynb"  можете посмотреть!
-```
-
-## Задача 2
-
-Вывести служебную информацию о пакете express (JavaScript). Разобрать основные элементы содержимого файла со служебной информацией из пакета. Как получить пакет без менеджера пакетов, прямо из репозитория?
-```
-Перейдите по ссылке: ( https://colab.research.google.com/drive/1JjhOhyg7dR0Imfa37TL1LETGwrp-2aog?usp=sharing )
-
-или в файле "practice_2_2.ipynb"  можете посмотреть!
-```
-
-## Задача 3
-
-Сформировать graphviz-код и получить изображения зависимостей matplotlib и express.
 
 ## Задача 4
 
