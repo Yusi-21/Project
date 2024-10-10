@@ -27,46 +27,9 @@
 ``` npm show express ```
 
 ### Результат.
-```
-npm show express
 
-express@4.21.0 | MIT | deps: 31 | versions: 279
-Fast, unopinionated, minimalist web framework
-http://expressjs.com/
+![image](https://github.com/user-attachments/assets/567dadb4-8b38-4310-9a78-d0f42c1bd28c)
 
-keywords: express, framework, sinatra, web, http, rest, restful, router, app, api
-
-dist
-.tarball: https://registry.npmjs.org/express/-/express-4.21.0.tgz
-.shasum: d57cb706d49623d4ac27833f1cbc466b668eb915
-.integrity: sha512-VqcNGcj/Id5ZT1LZ/cfihi3ttTn+NJmkli2eZADigjq29qTlWi/hAQ43t/VLPq8+UX06FCEx3ByOYet6ZFblng==
-.unpackedSize: 220.8 kB
-
-dependencies:
-accepts: ~1.3.8      etag: ~1.8.1         qs: 6.13.0           
-body-parser: 1.20.3  finalhandler: 1.3.1  range-parser: ~1.2.1 
-content-type: ~1.0.4 fresh: 0.5.2         safe-buffer: 5.2.1   
-cookie: 0.6.0        http-errors: 2.0.0   send: 0.19.0         
-debug: 2.6.9         methods: ~1.1.2      statuses: 2.0.1      
-depd: 2.0.0          on-finished: 2.4.1   type-is: ~1.6.18     
-encodeurl: ~2.0.0    parseurl: ~1.3.3     utils-merge: 1.0.1   
-escape-html: ~1.0.3  proxy-addr: ~2.0.7   vary: ~1.1.2         
-(...and 7 more.)
-
-maintainers:
-- wesleytodd <wes@wesleytodd.com>
-- dougwilson <doug@somethingdoug.com>
-- linusu <linus@folkdatorn.se>
-- sheplu <jean.burellier@gmail.com>
-- blakeembrey <hello@blakeembrey.com>
-- ulisesgascon <ulisesgascondev@gmail.com>
-- mikeal <mikeal.rogers@gmail.com>
-
-dist-tags:
-latest: 4.21.0  next: 5.0.0     
-
-published 2 weeks ago by wesleytodd <wes@wesleytodd.com>
-````
 ### Решение. Часть 2.
 Чтобы получить пакет прямо из репозитория без использования менеджера пакетов, нужно клонировать репозиторий вручную.
 
