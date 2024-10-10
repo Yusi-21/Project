@@ -163,47 +163,44 @@ enum Package = {root, foo, left, right, shared, target};
 
 % Зависимости пакетов
 array[Package] of set of Version: dependencies = [
-    {v1_0_0},     % root
-    {v1_0_0},     % foo
-    {v1_0_0},     % left
-    {v1_0_0},     % right
-    {v1_0_0, v2_0_0}, % shared
-    {v2_0_0}      % target
+    {v1_0_0},          % root
+    {v1_0_0, v1_1_0},  % foo
+    {v1_0_0},          % left
+    {v1_0_0},          % right
+    {v1_0_0, v2_0_0},  % shared
+    {v2_0_0}           % target
 ];
 
+% Переменные для версий пакетов
+array[Package] of var Version: versions;
+
 % Ограничения
-% root зависит от foo ^1.0.0 и target ^2.0.0
-constraint root in dependencies[foo] /\ root in dependencies[target];
+constraint versions[root] in dependencies[foo];   % root зависит от foo
+constraint versions[foo] in dependencies[left];    % foo зависит от left
+constraint versions[foo] in dependencies[right];   % foo зависит от right
+constraint versions[left] in dependencies[shared];  % left зависит от shared
+constraint versions[right] in dependencies[shared]; % right зависит от shared
+constraint versions[shared] in dependencies[target]; % shared зависит от target
 
-% foo 1.1.0 зависит от left ^1.0.0 и right ^1.0.0
-constraint foo in dependencies[left] /\ foo in dependencies[right];
-
-% left 1.0.0 зависит от shared >=1.0.0
-constraint left in dependencies[shared];
-
-% right 1.0.0 зависит от shared <2.0.0
-constraint right in dependencies[shared];
-
-% shared 1.0.0 зависит от target ^1.0.0
-constraint shared in dependencies[target];
-
-% shared 2.0.0 не имеет зависимостей, поэтому никаких ограничений не нужно
-
-% target 2.0.0 и 1.0.0 не имеют зависимостей, поэтому никаких ограничений не нужно
-
+% solve
 solve satisfy;
+
+% Вывод значений
+output [
+    "root = ", show(versions[root]), "\n",
+    "foo = ", show(versions[foo]), "\n",
+    "left = ", show(versions[left]), "\n",
+    "right = ", show(versions[right]), "\n",
+    "shared = ", show(versions[shared]), "\n",
+    "target = ", show(versions[target]), "\n"
+];
 
  ```
 
 ### Результат.
-```
-root = v1_0_0
-foo = v1_0_0
-left = v1_0_0
-right = v1_0_0
-shared = v1_0_0
-target = v2_0_0
-````
+
+![image](https://github.com/user-attachments/assets/a5820de2-f94c-47d7-87e0-24836eaf2b80)
+
 ## Задача №7
 Представить задачу о зависимостях пакетов в общей форме. Здесь необходимо действовать аналогично реальному менеджеру пакетов. То есть получить описание пакета, а также его зависимости в виде структуры данных. Например, в виде словаря. В предыдущих задачах зависимости были явно заданы в системе ограничений. Теперь же систему ограничений надо построить автоматически, по метаданным.
 
@@ -287,21 +284,6 @@ All dependencies for root are satisfied.
 
 
 # Практическое занятие №2. Менеджеры пакетов
-
-## Задача 6
-
-Решить на MiniZinc задачу о зависимостях пакетов для следующих данных:
-
-```
-root 1.0.0 зависит от foo ^1.0.0 и target ^2.0.0.
-foo 1.1.0 зависит от left ^1.0.0 и right ^1.0.0.
-foo 1.0.0 не имеет зависимостей.
-left 1.0.0 зависит от shared >=1.0.0.
-right 1.0.0 зависит от shared <2.0.0.
-shared 2.0.0 не имеет зависимостей.
-shared 1.0.0 зависит от target ^1.0.0.
-target 2.0.0 и 1.0.0 не имеют зависимостей.
-```
 
 ## Задача 7
 
