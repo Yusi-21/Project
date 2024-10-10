@@ -104,25 +104,38 @@ enum Package = {root, menu, dropdown, icons};
 
 % Зависимости пакетов
 array[Package] of set of Version: dependencies = [
-    {v1_0_0, v1_1_0, v1_2_0, v1_3_0, v1_4_0, v1_5_0}, % menu
-    {v1_8_0, v2_0_0, v2_1_0, v2_2_0, v2_3_0}, % dropdown
-    {v1_0_0, v2_0_0} % icons
+    {v1_0_0, v1_1_0, v1_2_0, v1_3_0, v1_4_0, v1_5_0},  % menu
+    {v1_8_0, v2_0_0, v2_1_0, v2_2_0, v2_3_0},  % dropdown
+    {v1_0_0, v2_0_0},  % icons
+    {}  % root (оставляем пустым, так как не определено)
 ];
 
-% Пример ограничения: root зависит от menu версии 1.5.0
-constraint root in dependencies[menu];
+% Переменные для версий пакетов
+array[Package] of var Version: versions;
 
-solve satisfy; какой ответ покажет этот код на minizink
+% Пример ограничения: root зависит от menu версии 1.5.0
+constraint versions[root] in dependencies[menu];
+
+% Установка значений для переменных
+constraint versions[menu] = v1_0_0;  % Задаем конкретную версию для menu
+constraint versions[dropdown] = v1_8_0;  % Задаем конкретную версию для dropdown
+constraint versions[icons] = v1_0_0;  % Задаем конкретную версию для icons
+
+solve satisfy;
+
+% Вывод значений
+output [
+    "root = ", show(versions[root]), "\n",
+    "menu = ", show(versions[menu]), "\n",
+    "dropdown = ", show(versions[dropdown]), "\n",
+    "icons = ", show(versions[icons]), "\n"
+];
 
  ```
 
 ### Результат.
-```
-root = v1_0_0
-menu = v1_0_0
-dropdown = v1_8_0
-icons = v1_0_0
-````
+
+![image](https://github.com/user-attachments/assets/fb66f0e9-00b2-4310-b9fa-f8cf1036a45d)
 
 ## Задача №6
 Решить на MiniZinc задачу о зависимостях пакетов для следующих данных:
@@ -264,36 +277,16 @@ print(check_dependencies("root"))
 All dependencies for root are satisfied.
 ````
 
+
+
+
+
+
+
+
+
+
 # Практическое занятие №2. Менеджеры пакетов
-
-## Задача 4
-
-**Следующие задачи можно решать с помощью инструментов на выбор:**
-
-* Решатель задачи удовлетворения ограничениям (MiniZinc).
-* SAT-решатель (MiniSAT).
-* SMT-решатель (Z3).
-
-Изучить основы программирования в ограничениях. Установить MiniZinc, разобраться с основами его синтаксиса и работы в IDE.
-
-Решить на MiniZinc задачу о счастливых билетах. Добавить ограничение на то, что все цифры билета должны быть различными (подсказка: используйте all_different). Найти минимальное решение для суммы 3 цифр.
-
-```
-Решено на MiniZinc
-```
-![happy_ticket](https://github.com/user-attachments/assets/c499ebd4-7694-4ba3-b356-ad3057bd82a3)
-
-```
-Решено на Google Colab (https://colab.research.google.com/drive/1dsWc_5G_EjEpP0mY9WHzTEv4ww6xwDaZ?usp=sharing)
-```
-![practice_2_4](https://github.com/user-attachments/assets/1d3255fd-56df-4962-a287-17a71451c029)
-
-
-## Задача 5
-
-Решить на MiniZinc задачу о зависимостях пакетов для рисунка, приведенного ниже.
-
-![](images/pubgrub.png)
 
 ## Задача 6
 
@@ -314,14 +307,3 @@ target 2.0.0 и 1.0.0 не имеют зависимостей.
 
 Представить задачу о зависимостях пакетов в общей форме. Здесь необходимо действовать аналогично реальному менеджеру пакетов. То есть получить описание пакета, а также его зависимости в виде структуры данных. Например, в виде словаря. В предыдущих задачах зависимости были явно заданы в системе ограничений. Теперь же систему ограничений надо построить автоматически, по метаданным.
 
-## Полезные ссылки
-
-Semver: https://devhints.io/semver
-
-Удовлетворение ограничений и программирование в ограничениях: http://intsys.msu.ru/magazine/archive/v15(1-4)/shcherbina-053-170.pdf
-
-Скачать MiniZinc: https://www.minizinc.org/software.html
-
-Документация на MiniZinc: https://www.minizinc.org/doc-2.5.5/en/part_2_tutorial.html
-
-Задача о счастливых билетах: https://ru.wikipedia.org/wiki/%D0%A1%D1%87%D0%B0%D1%81%D1%82%D0%BB%D0%B8%D0%B2%D1%8B%D0%B9_%D0%B1%D0%B8%D0%BB%D0%B5%D1%82
