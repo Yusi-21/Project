@@ -6,24 +6,12 @@
 
 ### Результат.
 ![image](https://github.com/user-attachments/assets/6468ef21-cc3d-4969-ada7-575d2f355f97)
-```
-(base) richardtrisvetov@MacBook-Air-3 prac2 % pip show matplotlib
-Name: matplotlib
-Version: 3.5.2
-Summary: Python plotting package
-Home-page: https://matplotlib.org
-Author: John D. Hunter, Michael Droettboom
-Author-email: matplotlib-users@python.org
-License: PSF
-Location: /Users/richardtrisvetov/opt/anaconda3/lib/python3.9/site-packages
-Requires: cycler, fonttools, kiwisolver, numpy, packaging, pillow, pyparsing, python-dateutil
-Required-by: seaborn
-````
+
 ### Решение. 2 часть.
 
-Чтобы получить пакет matplotlib без использования менеджера пакетов, вы можете скачать его напрямую из репозитория.
+Чтобы получить пакет matplotlib без использования менеджера пакетов, мы можем скачать его напрямую из репозитория.
 
-` git clone https://github.com/matplotlib/matplotlib.git ` - создает локальную копию репозитория на пк.
+` git clone https://github.com/matplotlib/matplotlib.git ` - создает локальную копию репозитория на компьютере.
 
 ` cd matplotlib ` - переход в директорию пакета
 
