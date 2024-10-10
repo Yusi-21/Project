@@ -61,6 +61,8 @@ pipdeptree --packages matplotlib --graph-output dot > matplotlib_deps.dot
 
 Решение задачи о счастливых билетах:
 ```
+include "globals.mzn";
+
 % Определение переменных
 array[1..6] of var 0..9: digits; % Цифры билета
 
@@ -83,10 +85,9 @@ output [
  ```
 
 ### Результат.
-```
-Digits: [1, 2, 3, 0, 2, 4]
-Sum of first three digits: 6
-````
+
+![image](https://github.com/user-attachments/assets/c19b5820-d3d2-43d5-bd03-07c3a0553bb0)
+
 ## Задача №5
 Решить на MiniZinc задачу о зависимостях пакетов для рисунка, приведенного ниже (рисунок можно найти в методичке).
 
