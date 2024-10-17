@@ -11,7 +11,7 @@
 
 #### Исходный JSON:
 
-```json
+```
 {
   "groups": [
     "ИКБО-1-20",
@@ -56,42 +56,65 @@
       "name": "Сидоров С.С."
     },
     {
-      "age": 19,
-      "group": "ИКБО-65-23",
-      "name": "Полянский М.Д."
+      "age": 23,
+      "group": "ИКБО-63-23",
+      "name": "Абдырахманов Ю."
     }
   ],
   "subject": "Конфигурационное управление"
 }
+
 ```
 #### Реализация:
-```jsonnet
-{
-local groupTemplate(index) = "ИКБО-" + index + "-20";
+```
+// Функция для создания группы
+local group(name) = name;
 
-local groups = [groupTemplate(i) for i in std.range(1, 24)];
-
-local studentTemplate(name, age, group) = {
+// Функция для создания студента
+local student(age, groupName, name) = {
   age: age,
-  group: group,
+  group: groupName,
   name: name,
 };
 
-local students = [
-  studentTemplate("Иванов И.И.", 19, "ИКБО-4-20"),
-  studentTemplate("Петров П.П.", 18, "ИКБО-5-20"),
-  studentTemplate("Сидоров С.С.", 18, "ИКБО-5-20"),
-  studentTemplate("Полянский М.Д.", 19, "ИКБО-65-23"),
-];
-
+// Используем функции для создания данных
 {
-  groups: groups,
-  students: students,
+  groups: [
+    group("ИКБО-1-20"),
+    group("ИКБО-2-20"),
+    group("ИКБО-3-20"),
+    group("ИКБО-4-20"),
+    group("ИКБО-5-20"),
+    group("ИКБО-6-20"),
+    group("ИКБО-7-20"),
+    group("ИКБО-8-20"),
+    group("ИКБО-9-20"),
+    group("ИКБО-10-20"),
+    group("ИКБО-11-20"),
+    group("ИКБО-12-20"),
+    group("ИКБО-13-20"),
+    group("ИКБО-14-20"),
+    group("ИКБО-15-20"),
+    group("ИКБО-16-20"),
+    group("ИКБО-17-20"),
+    group("ИКБО-18-20"),
+    group("ИКБО-19-20"),
+    group("ИКБО-20-20"),
+    group("ИКБО-21-20"),
+    group("ИКБО-22-20"),
+    group("ИКБО-23-20"),
+    group("ИКБО-24-20"),
+  ],
+  students: [
+    student(19, "ИКБО-4-20", "Иванов И.И."),
+    student(18, "ИКБО-5-20", "Петров П.П."),
+    student(18, "ИКБО-5-20", "Сидоров С.С."),
+    student(23, "ИКБО-63-23", "Абдырахманов Ю."),
+  ],
   subject: "Конфигурационное управление",
 }
 ```
-![image](https://github.com/user-attachments/assets/567f49a0-ef55-424b-b0d9-02300b36a1ce)
-
+![image](https://github.com/user-attachments/assets/bb0a770f-3d62-47a5-af50-a5a071a49f25)
 
 ## Задача 2
 
