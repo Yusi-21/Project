@@ -155,7 +155,7 @@ let students : List Student =
     [ { age = 19, group = "ИКБО-4-20", name = "Иванов И.И." }
     , { age = 18, group = "ИКБО-5-20", name = "Петров П.П." }
     , { age = 18, group = "ИКБО-5-20", name = "Сидоров С.С." }
-    , { age = 18, group = "ИКБО-63-23", name = "Абдырахманов Ю." }
+    , { age = 23, group = "ИКБО-63-23", name = "Абдырахманов Ю." }
     ]
 
 in
@@ -200,12 +200,12 @@ students:
   - age: 18
     group: "ИКБО-5-20"
     name: "Сидоров С.С."
-  - age: 18
+  - age: 23
     group: "ИКБО-63-23"
     name: "Абдырахманов Ю."
 subject: "Конфигурационное управление"
 ```
-![image](https://github.com/user-attachments/assets/15962aaa-31e5-44a7-9619-ea633bc5948c)
+![image](https://github.com/user-attachments/assets/0bae48b4-e458-4c85-9c2d-0b0c5179f79c)
 ## Задача 3
 
 Язык нулей и единиц.
