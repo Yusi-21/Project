@@ -249,19 +249,38 @@ for i in range(5):
 
 Язык правильно расставленных скобок двух видов.
 ```
+import random
+def parse_bnf(text):
+    '''
+    Преобразовать текстовую запись БНФ в словарь.
+    '''
+    grammar = {}
+    rules = [line.split('=') for line in text.strip().split('\n')]
+    for name, body in rules:
+        grammar[name.strip()] = [alt.split() for alt in body.split('|')]
+    return grammar
+
+def generate_phrase(grammar, start):
+    '''
+    Сгенерировать случайную фразу.
+    '''
+    if start in grammar:
+        seq = random.choice(grammar[start])
+        return ''.join([generate_phrase(grammar, name) for name in seq])
+    return str(start)
+
 BNF = '''
 S = A | B | C
-A = ( S ) | { S } | ε
+A = ( S ) | { S } | 俄国
 B = ( A ) | { A }
-C = ε
+C = 俄国
 '''
 
-for i in range(10):
+for i in range(7):
     print(generate_phrase(parse_bnf(BNF), 'S'))
 
 ```
-
-![image](https://github.com/user-attachments/assets/bd6b355f-acd8-44e7-a430-e756edd2beab)
+![image](https://github.com/user-attachments/assets/beb8a4f2-eb08-49af-8441-26450eda7da4)
 
 ## Задача 5
 
