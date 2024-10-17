@@ -211,20 +211,39 @@ subject: "Конфигурационное управление"
 Язык нулей и единиц.
 
 ```
+import random
+def parse_bnf(text):
+    '''
+    Преобразовать текстовую запись БНФ в словарь.
+    '''
+    grammar = {}
+    rules = [line.split('=') for line in text.strip().split('\n')]
+    for name, body in rules:
+        grammar[name.strip()] = [alt.split() for alt in body.split('|')]
+    return grammar
+
+def generate_phrase(grammar, start):
+    '''
+    Сгенерировать случайную фразу.
+    '''
+    if start in grammar:
+        seq = random.choice(grammar[start])
+        return ''.join([generate_phrase(grammar, name) for name in seq])
+    return str(start)
+
 BNF = '''
-S = A | B | C | D | E
-A = 1 | 1 A | 1 B
-B = 0 | 0 B
+S = A | B | C | D 
+A = 1 | 1 A | 0 B
+B = 1 | 0 B
 C = 1 1
-D = 1 0 1 1 0 1
-E = 0 0 0
+D = 1 1 0 1
 '''
 
-for i in range(10):
-    print(generate_phrase(parse_bnf(BNF), 'S'))
+for i in range(5):
+    print(generate_phrase(parse_bnf(BNF), 'S'))   
 ```
 
-![image](https://github.com/user-attachments/assets/44bc0908-f43f-4936-8bfd-46203e0e7989)
+![image](https://github.com/user-attachments/assets/9b56953c-26b4-4d7a-b194-eba375309ddb)
 
 ## Задача 4
 
