@@ -1,0 +1,5 @@
+<config>
+    <username>user</username>  
+    <hostname>mycomputer</hostname>  
+    <vfs_path>C:\hw-1\virtual_fs.tar</vfs_path>  
+</config>
