@@ -1,0 +1,21 @@
+2024-10-20 23:48:13,007 - __main__ - DEBUG - Config read: vfs_path=C:\hw-1\virtual_fs.tar, username=user, hostname=mycomputer
+2024-10-20 23:48:13,028 - __main__ - DEBUG - VFS initialized: vfs_path=C:\hw-1\virtual_fs.tar
+2024-10-20 23:48:13,028 - __main__ - DEBUG - Emulator started
+2024-10-20 23:48:15,753 - __main__ - DEBUG - Listing files in current directory: 
+2024-10-20 23:48:21,206 - __main__ - DEBUG - Changing directory: folder1
+2024-10-20 23:48:23,254 - __main__ - DEBUG - Listing files in current directory: folder1/
+2024-10-20 23:48:30,396 - __main__ - DEBUG - Getting last 10 lines from folder1/file1.txt
+2024-10-20 23:48:36,089 - __main__ - DEBUG - Changing directory: ..
+2024-10-20 23:48:37,302 - __main__ - DEBUG - Listing files in current directory: 
+2024-10-20 23:48:45,309 - __main__ - DEBUG - Removing directory: folder1/
+2024-10-20 23:48:51,229 - __main__ - DEBUG - Removing directory: folder2/
+2024-10-20 23:48:56,983 - __main__ - DEBUG - Listing files in current directory: 
+2024-10-20 23:49:02,384 - __main__ - DEBUG - Changing directory: folder2
+2024-10-20 23:49:23,050 - __main__ - DEBUG - Exiting emulator...
+2024-10-20 23:50:33,783 - __main__ - DEBUG - Config read: vfs_path=C:\hw-1\virtual_fs.tar, username=user, hostname=mycomputer
+2024-10-20 23:50:33,788 - __main__ - DEBUG - VFS initialized: vfs_path=C:\hw-1\virtual_fs.tar
+2024-10-20 23:50:33,788 - __main__ - DEBUG - Emulator started
+2024-10-20 23:50:35,438 - __main__ - DEBUG - Listing files in current directory: 
+2024-10-20 23:50:42,404 - __main__ - DEBUG - Changing directory: folder1
+2024-10-20 23:50:53,922 - __main__ - DEBUG - Getting last 10 lines from folder1/file1.txt
+2024-10-20 23:50:57,094 - __main__ - DEBUG - Exiting emulator...
