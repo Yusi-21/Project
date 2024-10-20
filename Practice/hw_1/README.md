@@ -27,8 +27,15 @@ python core.py
 
 ## Структура проекта
 ```
+tests
+ - tests.py # тесты
 app.log # логи проекта
 config.xml # конфиг для эмулятора
 core.py # ядро эмулятора
 generate_vfs.py # генерирует виртуальное пространство
+```
+
+## Запуск тестов
+```
+python -m tests.tests
 ```
