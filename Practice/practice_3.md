@@ -68,7 +68,7 @@
 #### Реализация:
 ```
 // Функция для создания группы
-local group(name) = name;
+local group(n) = "ИКБО-" + n + "-20";
 
 // Функция для создания студента
 local student(age, groupName, name) = {
@@ -79,32 +79,7 @@ local student(age, groupName, name) = {
 
 // Используем функции для создания данных
 {
-  groups: [
-    group("ИКБО-1-20"),
-    group("ИКБО-2-20"),
-    group("ИКБО-3-20"),
-    group("ИКБО-4-20"),
-    group("ИКБО-5-20"),
-    group("ИКБО-6-20"),
-    group("ИКБО-7-20"),
-    group("ИКБО-8-20"),
-    group("ИКБО-9-20"),
-    group("ИКБО-10-20"),
-    group("ИКБО-11-20"),
-    group("ИКБО-12-20"),
-    group("ИКБО-13-20"),
-    group("ИКБО-14-20"),
-    group("ИКБО-15-20"),
-    group("ИКБО-16-20"),
-    group("ИКБО-17-20"),
-    group("ИКБО-18-20"),
-    group("ИКБО-19-20"),
-    group("ИКБО-20-20"),
-    group("ИКБО-21-20"),
-    group("ИКБО-22-20"),
-    group("ИКБО-23-20"),
-    group("ИКБО-24-20"),
-  ],
+  groups: [group(n) for n in std.range(1, 24)],
   students: [
     student(19, "ИКБО-4-20", "Иванов И.И."),
     student(18, "ИКБО-5-20", "Петров П.П."),
@@ -114,7 +89,7 @@ local student(age, groupName, name) = {
   subject: "Конфигурационное управление",
 }
 ```
-![image](https://github.com/user-attachments/assets/bb0a770f-3d62-47a5-af50-a5a071a49f25)
+![image](https://github.com/user-attachments/assets/c1d65ede-95ff-4f87-af78-90c129926eb5)
 
 ## Задача 2
 
