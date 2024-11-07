@@ -38,7 +38,7 @@ git checkout IN
 git init
 git config user.name "coder1"
 git config user.email "coder1@mirea.ru"
-echo print("Hello, World!") > prog.py
+echo print("Hello, Mirea!") > prog.py
 git add prog.py
 git commit -m "first commit"
 git status
@@ -135,23 +135,25 @@ Coder2 добавляет в readme в раздел об авторах свою
 ```bash
 git init
 git config user.name "coder1"
-git config user.email "coder1@example.com"
-echo print("Hello, World!") > prog.py
+git config user.email "coder1@mirea.ru"
+echo print("Hello, Mirea!") > prog.py
 git add prog.py
 git commit -m "first commit"
+git status
+git log
 
-cd D:\repository
+cd D:\mygitrepo
 git init --bare server
 
-git remote add server D:\repository\server
+git remote add server D:\mygitrepo\server
 git remote -v
 
 git push server master
 
-git clone D:\repository\server D:\repository\client
-cd D:\repository\client
+git clone D:\mygitrepo\server D:\mygitrepo\client
+cd D:\mygitrepo\client
 git config user.name "coder2"
-git config user.email "coder2@example.com"
+git config user.email "coder2@mirea.ru"
 
 echo "Author Information:" > readme.md
 git add readme.md
@@ -161,7 +163,7 @@ git remote rename origin server
 
 git push server master
 
-cd D:\repository
+cd D:\mygitrepo
 git pull server master
 
 echo "Author: coder1" >> readme.md
@@ -169,7 +171,7 @@ git add readme.md
 git commit -m "coder1 info"
 git push server master
 
-cd D:\repository\client
+cd D:\mygitrepo\client
 echo "Author: coder2" >> readme.md
 git add readme.md
 git commit -m "coder2 info"
@@ -188,42 +190,48 @@ git log -n 5 --graph --decorate --all
 
 ## Результат:
 
-![image](https://github.com/user-attachments/assets/f2e7371c-f6d6-4846-bea1-6014e790b1a7)
+![image](https://github.com/user-attachments/assets/60d7ffaf-f1e5-433c-a1b4-66b0f49d1f8f)
+
+![image](https://github.com/user-attachments/assets/8a33789a-5367-40a9-be64-922c2d083da0)
+
+![image](https://github.com/user-attachments/assets/8427230a-a91f-40d7-8292-d6450180827d)
+
+![image](https://github.com/user-attachments/assets/11b0ad91-a9d6-4885-a3e1-efa510addc7c)
 
 ```bash
-D:\repository\server>git log -n 5 --graph --decorate --all
-*   commit 73a4759924d3c8f2ab582bd8f29a9e8b1fea1a78 (HEAD -> master)
-|\  Merge: 8ebc7c1 b5f90b0
-| | Author: coder2 <coder2@example.com>
-| | Date:   Mon Nov 4 04:07:50 2024 +0300
+C:\mygitrepo\server>git log -n 5 --graph --decorate --all
+*   commit 0144a7a9873b5dbbe1c1116d094b3a8ee53fb81b (HEAD -> master)
+|\  Merge: 1c6d5a4 65523b9
+| | Author: coder2 <coder2@mirea.ru>
+| | Date:   Thu Nov 7 15:24:20 2024 +0300
 | |
 | |     readme fix
 | |
-| * commit b5f90b095e4917283fe8b96817ee606d812ff24a
-| | Author: coder1 <coder1@example.com>
-| | Date:   Mon Nov 4 04:06:06 2024 +0300
+| * commit 65523b9d3feb31031eba117fd82076704db8cc60
+| | Author: coder1 <coder1@mirea.ru>
+| | Date:   Thu Nov 7 15:20:47 2024 +0300
 | |
 | |     coder1 info
 | |
-* | commit 8ebc7c186983e9a5504a3e1bae035bd994fba577
-|/  Author: coder2 <coder2@example.com>
-|   Date:   Mon Nov 4 04:06:33 2024 +0300
+* | commit 1c6d5a465c39ad35407482b7759235cff6885902
+|/  Author: coder2 <coder2@mirea.ru>
+|   Date:   Thu Nov 7 15:22:36 2024 +0300
 |
 |       coder2 info
 |
-* commit 0b8d1714592eac8dcb8bd4b165aa43fe58741c04
-| Author: coder2 <coder2@example.com>
-| Date:   Mon Nov 4 04:03:46 2024 +0300
+* commit 3f778482c576ef449cfac571c21ddeb620af5817
+| Author: coder2 <coder2@mirea.ru>
+| Date:   Thu Nov 7 15:17:50 2024 +0300
 |
 |     docs
 |
-* commit ac451ff5ac0ed504be56e6d2d4b743bb7977b46d
-  Author: coder1 <coder1@example.com>
-  Date:   Mon Nov 4 03:59:01 2024 +0300
+* commit 44ef3379e63cd30e4f05b6023b2e07a6a15d7fa3
+  Author: coder1 <coder1@mirea.ru>
+  Date:   Thu Nov 7 15:04:14 2024 +0300
 
       first commit
 
-D:\repository\server>
+D:\mygitrepo\server>
 ```
 
 ## Задача 4
