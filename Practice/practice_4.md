@@ -270,5 +270,5 @@ if __name__ == '__main__':
 
 ## Результат:
 
-![image](https://github.com/user-attachments/assets/21287f60-70b6-4672-8118-5e17b039a7ec)
+![image](https://github.com/user-attachments/assets/0853f136-068b-4181-933d-d1d646f5b453)
 
