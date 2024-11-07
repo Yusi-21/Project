@@ -18,7 +18,6 @@ file_handler.setFormatter(formatter)
 
 logger.addHandler(file_handler)
 
-
 class Emulator:
     def __init__(self, config_path):
         self.config = self.read_config(config_path)
@@ -49,8 +48,7 @@ class Emulator:
 
     def ls(self):
         logger.debug('Listing files in current directory: %s', self.current_dir)
-        files = [f for f in self.tar_ref.getnames() if
-                 f.startswith(self.current_dir) and f != self.current_dir.rstrip('/')]
+        files = [f for f in self.tar_ref.getnames() if f.startswith(self.current_dir) and f != self.current_dir.rstrip('/')]
         current_dir_files = set()
 
         for f in files:
@@ -78,8 +76,7 @@ class Emulator:
             new_path += '/'
 
         # Проверяем, существует ли директория
-        if any(member.isdir() and member.name.rstrip('/') == new_path.rstrip('/') for member in
-               self.tar_ref.getmembers()):
+        if any(member.isdir() and member.name.rstrip('/') == new_path.rstrip('/') for member in self.tar_ref.getmembers()):
             self.current_dir = new_path
             return f"Changed directory to {self.current_dir}"
         else:
@@ -106,23 +103,23 @@ class Emulator:
 
         # Проверяем, существует ли директория
         directory_content = [f for f in self.tar_ref.getnames() if f.startswith(full_dir_path)]
-
+        
         if not directory_content:
             return f"rmdir: {dir_path}: No such directory"
         else:
             # Закрываем текущий архив
             self.tar_ref.close()
-
+            
             # Создаём временную директорию для работы
             temp_dir = tempfile.mkdtemp()
-
+            
             # Извлекаем весь архив во временную директорию
             with tarfile.open(self.vfs_path, 'r') as tar:
                 tar.extractall(path=temp_dir)
-
+            
             # Полный путь к директории, которую нужно удалить
             dir_to_remove = os.path.join(temp_dir, full_dir_path)
-
+            
             # Проверяем, существует ли директория на файловой системе и удаляем её
             if os.path.isdir(dir_to_remove):
                 shutil.rmtree(dir_to_remove)
@@ -138,10 +135,10 @@ class Emulator:
 
             # Чистим временную директорию
             shutil.rmtree(temp_dir)
-
+            
             # Перезапускаем виртуальную файловую систему с новым архивом
             self.init_vfs()
-
+            
             # Проверяем, что удалённая директория отсутствует
             updated_directory_content = [f for f in self.tar_ref.getnames() if f.startswith(full_dir_path)]
             if not updated_directory_content:
@@ -181,50 +178,13 @@ class Emulator:
                 result = "tail: missing file"
         elif cmd == 'rmdir':
             if args:
-                dir_name = args[0]
-                result = self.rmdir(dir_name)  # Передаем директорию
-                # Проверяем, если команда rmdir для folder2 и удаление было успешным
-                if dir_name == "folder2/" in result:
-                    result = "folder2 removed successfully."
-            else:
-                result = "rmdir: missing directory"
-        else:
-            result = f"{cmd}: command not found"
-
-        return result
-
-    '''
-    def run_command(self, command):
-        parts = command.strip().split()
-        if not parts:
-            return
-
-        cmd = parts[0]
-        args = parts[1:]
-
-        if cmd == 'ls':
-            result = self.ls()
-        elif cmd == 'cd':
-            if args:
-                result = self.cd(args[0])
-            else:
-                result = "cd: missing path"
-        elif cmd == 'exit':
-            result = self.exit()
-        elif cmd == 'tail':
-            if args:
-                result = self.tail(args[0])  # Передаем файл
-            else:
-                result = "tail: missing file"
-        elif cmd == 'rmdir':
-            if args:
                 result = self.rmdir(args[0])  # Передаем директорию
             else:
                 result = "rmdir: missing directory"
         else:
             result = f"{cmd}: command not found"
 
-        return result'''
+        return result
 
 
 if __name__ == '__main__':
@@ -235,4 +195,3 @@ if __name__ == '__main__':
         output = emulator.run_command(command)
         if output:
             print(output)
-
