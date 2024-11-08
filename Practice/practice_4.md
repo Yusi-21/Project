@@ -142,16 +142,16 @@ git commit -m "first commit"
 git status
 git log
 
-cd D:\mygitrepo
+cd C:\mygitrepo
 git init --bare server
 
-git remote add server D:\mygitrepo\server
+git remote add server C:\mygitrepo\server
 git remote -v
 
 git push server master
 
-git clone D:\mygitrepo\server D:\mygitrepo\client
-cd D:\mygitrepo\client
+git clone C:\mygitrepo\server C:\mygitrepo\client
+cd C:\mygitrepo\client
 git config user.name "coder2"
 git config user.email "coder2@mirea.ru"
 
@@ -163,7 +163,7 @@ git remote rename origin server
 
 git push server master
 
-cd D:\mygitrepo
+cd C:\mygitrepo
 git pull server master
 
 echo "Author: coder1" >> readme.md
@@ -171,7 +171,7 @@ git add readme.md
 git commit -m "coder1 info"
 git push server master
 
-cd D:\mygitrepo\client
+cd C:\mygitrepo\client
 echo "Author: coder2" >> readme.md
 git add readme.md
 git commit -m "coder2 info"
@@ -231,7 +231,7 @@ C:\mygitrepo\server>git log -n 5 --graph --decorate --all
 
       first commit
 
-D:\mygitrepo\server>
+C:\mygitrepo\server>
 ```
 
 ## Задача 4
