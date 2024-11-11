@@ -21,9 +21,7 @@ venv\Scripts\activate
 ```
 python core.py
 ```
-![git02](https://github.com/user-attachments/assets/54e6a045-8d8a-4fbc-b0a0-02adfd662821)
-
-![git03](https://github.com/user-attachments/assets/58cfaf41-18d8-402d-a7d9-5b97bfa3759c)
+![image](https://github.com/user-attachments/assets/031bdb3b-dd22-489a-960a-522a56606ce3)
 
 ## Структура проекта
 ```
