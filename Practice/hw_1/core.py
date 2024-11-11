@@ -101,52 +101,46 @@ class Emulator:
         full_dir_path = os.path.join(self.current_dir, dir_path).rstrip('/') + '/'
         logger.debug('Removing directory: %s', full_dir_path)
 
-        # Проверяем, существует ли директория
-        directory_content = [f for f in self.tar_ref.getnames() if f.startswith(full_dir_path)]
-        
-        if not directory_content:
-            return f"rmdir: {dir_path}: No such directory"
+        # Закрываем текущий архив
+        self.tar_ref.close()
+        temp_dir = tempfile.mkdtemp()
+
+	
+
+        # Извлекаем весь архив во временную директорию
+        with tarfile.open(self.vfs_path, 'r') as tar:
+            tar.extractall(path=temp_dir)
+
+        dir_to_remove = os.path.join(temp_dir, full_dir_path)
+
+        # Проверяем существование директории и удаляем её, даже если она пустая
+        if os.path.isdir(dir_to_remove):
+            shutil.rmtree(dir_to_remove)
+            logger.debug(f"Directory {dir_path} removed from filesystem.")
         else:
-            # Закрываем текущий архив
-            self.tar_ref.close()
-            
-            # Создаём временную директорию для работы
-            temp_dir = tempfile.mkdtemp()
-            
-            # Извлекаем весь архив во временную директорию
-            with tarfile.open(self.vfs_path, 'r') as tar:
-                tar.extractall(path=temp_dir)
-            
-            # Полный путь к директории, которую нужно удалить
-            dir_to_remove = os.path.join(temp_dir, full_dir_path)
-            
-            # Проверяем, существует ли директория на файловой системе и удаляем её
-            if os.path.isdir(dir_to_remove):
-                shutil.rmtree(dir_to_remove)
-                logger.debug(f"Directory {dir_path} removed from filesystem.")
-            else:
-                shutil.rmtree(temp_dir)  # Чистим временную директорию
-                self.init_vfs()  # Перезапускаем VFS
-                return f"rmdir: {dir_path}: No such directory on filesystem"
-
-            # Создаём новый архив из обновлённого содержимого временной директории
-            with tarfile.open(self.vfs_path, 'w') as tar:
-                tar.add(temp_dir, arcname='')
-
-            # Чистим временную директорию
             shutil.rmtree(temp_dir)
-            
-            # Перезапускаем виртуальную файловую систему с новым архивом
             self.init_vfs()
-            
-            # Проверяем, что удалённая директория отсутствует
-            updated_directory_content = [f for f in self.tar_ref.getnames() if f.startswith(full_dir_path)]
-            if not updated_directory_content:
-                logger.debug(f"Directory {dir_path} successfully removed from archive.")
-                return f"rmdir: {dir_path}: Directory removed successfully"
-            else:
-                logger.error(f"Failed to remove directory {dir_path}. It still exists in the archive.")
-                return f"rmdir: {dir_path}: Failed to remove directory"
+            return f"rmdir: {dir_path}: No such directory on filesystem"
+
+        # Создаём новый архив из обновлённого содержимого временной директории, включая пустые папки
+        with tarfile.open(self.vfs_path, 'w') as tar:
+            for root, dirs, files in os.walk(temp_dir):
+                for dir in dirs:
+                    dirpath = os.path.join(root, dir)
+                    arcname = os.path.relpath(dirpath, temp_dir)
+                    tar.add(dirpath, arcname=arcname)  # Добавляем пустые папки
+                for file in files:
+                    fullpath = os.path.join(root, file)
+                    arcname = os.path.relpath(fullpath, temp_dir)
+                    tar.add(fullpath, arcname=arcname)
+
+        shutil.rmtree(temp_dir)
+        self.init_vfs()  # Обновляем tar_ref после внесённых изменений
+
+        logger.debug(f"Directory {dir_path} successfully removed from archive.")
+        return f"rmdir: {dir_path}: Directory removed successfully"
+
+
 
     def exit(self):
         logger.debug('Exiting emulator...')
