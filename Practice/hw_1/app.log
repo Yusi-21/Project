@@ -1,15 +1,15 @@
-2024-11-11 22:03:12,788 - __main__ - DEBUG - Config read: vfs_path=C:\Project\virtual_fs.tar, username=user, hostname=mycomputer
-2024-11-11 22:03:12,826 - __main__ - DEBUG - VFS initialized with updated archive: C:\Project\virtual_fs.tar
-2024-11-11 22:03:12,826 - __main__ - DEBUG - Emulator started
-2024-11-11 22:03:14,371 - __main__ - DEBUG - Listing files in current directory: 
-2024-11-11 22:03:21,513 - __main__ - DEBUG - Changing directory: folder1
-2024-11-11 22:03:23,962 - __main__ - DEBUG - Listing files in current directory: folder1/
-2024-11-11 22:03:33,531 - __main__ - DEBUG - Getting last 10 lines from folder1/file1.txt
-2024-11-11 22:03:40,953 - __main__ - DEBUG - Changing directory: ..
-2024-11-11 22:03:44,062 - __main__ - DEBUG - Listing files in current directory: 
-2024-11-11 22:03:54,144 - __main__ - DEBUG - Removing directory: folder2/
-2024-11-11 22:03:54,168 - __main__ - DEBUG - Directory folder2/ removed from filesystem.
-2024-11-11 22:03:54,195 - __main__ - DEBUG - VFS initialized with updated archive: C:\Project\virtual_fs.tar
-2024-11-11 22:03:54,196 - __main__ - DEBUG - Directory folder2/ successfully removed from archive.
-2024-11-11 22:04:34,355 - __main__ - DEBUG - Listing files in current directory: 
-2024-11-11 22:05:19,568 - __main__ - DEBUG - Exiting emulator...
+2024-11-11 22:19:49,846 - __main__ - DEBUG - Config read: vfs_path=C:\Project\virtual_fs.tar, username=user, hostname=mycomputer
+2024-11-11 22:19:49,861 - __main__ - DEBUG - VFS initialized with updated archive: C:\Project\virtual_fs.tar
+2024-11-11 22:19:49,861 - __main__ - DEBUG - Emulator started
+2024-11-11 22:19:51,331 - __main__ - DEBUG - Listing files in current directory: 
+2024-11-11 22:19:56,329 - __main__ - DEBUG - Changing directory: folder1
+2024-11-11 22:19:57,893 - __main__ - DEBUG - Listing files in current directory: folder1/
+2024-11-11 22:20:10,851 - __main__ - DEBUG - Getting last 10 lines from folder1/file1.txt
+2024-11-11 22:20:14,457 - __main__ - DEBUG - Changing directory: ..
+2024-11-11 22:20:15,475 - __main__ - DEBUG - Listing files in current directory: 
+2024-11-11 22:20:24,000 - __main__ - DEBUG - Removing directory: folder2/
+2024-11-11 22:20:24,019 - __main__ - DEBUG - Directory folder2/ removed from filesystem.
+2024-11-11 22:20:24,040 - __main__ - DEBUG - VFS initialized with updated archive: C:\Project\virtual_fs.tar
+2024-11-11 22:20:24,040 - __main__ - DEBUG - Directory folder2/ successfully removed from archive.
+2024-11-11 22:20:26,425 - __main__ - DEBUG - Listing files in current directory: 
+2024-11-11 22:20:30,244 - __main__ - DEBUG - Exiting emulator...
