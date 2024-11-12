@@ -241,6 +241,11 @@ public class Task1 {
 }
 ```
 
+## Результат:
+
+![image](https://github.com/user-attachments/assets/ae4fc9dc-4712-4ef9-a3dd-c340fd173eb8)
+
+
 ### Байткод JVM для задачи 1
 
 Скомпилируем этот код и посмотрим байткод JVM для метода `compute`:
@@ -263,9 +268,6 @@ public class Task1 {
 4. **`bipush 42`** — Загружает константу `42` на стек.
 5. **`iadd`** — Складывает два верхних значения на стеке, результат снова помещается на стек.
 6. **`ireturn`** — Возвращает верхнее значение со стека как результат метода.
-
-
-
 
 
 ### Задача 2 (факториал):
@@ -333,8 +335,6 @@ public class Task2 {
 13. **`ireturn`** — Возвращает `r` как результат.
 
 ## Результат:
-
-![image](https://github.com/user-attachments/assets/ae4fc9dc-4712-4ef9-a3dd-c340fd173eb8)
 
 ![image](https://github.com/user-attachments/assets/176c3e8b-234a-49b9-a4a1-f8d1cedc191c)
 
