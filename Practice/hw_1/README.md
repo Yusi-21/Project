@@ -40,3 +40,4 @@ generate_vfs.py # генерирует виртуальное пространс
 ```
 python -m tests.tests
 ```
+![image](https://github.com/user-attachments/assets/d1a5c96c-122e-488f-827d-fda3d6000361)
