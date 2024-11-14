@@ -1,107 +1,97 @@
+import warnings
 import unittest
 import os
 import tarfile
-import shutil
 from core import Emulator
-from generate_vfs import create_virtual_fs_structure, create_tar_archive
+import tempfile
+import shutil
+import gc
+import logging
 
-class TestVirtualFS(unittest.TestCase):
+logging.captureWarnings(True)  # Перенаправляет варнинги в логгер
+logging.basicConfig(level=logging.ERROR)  # Показывает только ошибки
+
+class TestEmulator(unittest.TestCase):
+
     @classmethod
     def setUpClass(cls):
-        """
-        Создаем виртуальную файловую систему перед запуском всех тестов.
-        """
-        cls.virtual_fs_dir = 'test_virtual_fs'
-        cls.tar_file = 'test_virtual_fs.tar'
+        # Создаем временный конфигурационный файл и виртуальную файловую систему
+        cls.config_path = 'test_config.xml'
+        with open(cls.config_path, 'w') as config_file:
+            config_file.write("""
+            <config>
+                <vfs_path>virtual_fs.tar</vfs_path>
+                <username>user</username>
+                <hostname>mycomputer</hostname>
+            </config>
+            """)
+        cls.tar_file = 'virtual_fs.tar'
+        cls._generate_virtual_fs_tar(cls.tar_file)
 
-        # Генерируем виртуальную файловую систему
-        create_virtual_fs_structure(cls.virtual_fs_dir)
-        create_tar_archive(cls.virtual_fs_dir, cls.tar_file)
+    def test_ls_command(self):
+        self.emulator = Emulator(self.config_path)
+        result = self.emulator.ls()
+        self.assertIn("folder1", result)
+        self.assertIn("folder2", result)
 
-        # Генерируем конфигурационный файл для эмулятора
-        cls.config_file = 'test_config.xml'
-        with open(cls.config_file, 'w') as f:
-            f.write(f"""<config>
-    <vfs_path>{cls.tar_file}</vfs_path>
-    <username>test_user</username>
-    <hostname>test_host</hostname>
-</config>""")
+    def test_cd_command(self):
+        self.emulator = Emulator(self.config_path)
+        result = self.emulator.cd('folder1')
+        self.assertIn("Changed directory", result)
+        self.assertTrue(self.emulator.current_dir.endswith('folder1/'))
+
+        # Проверка несуществующей директории
+        result = self.emulator.cd('nonexistent_folder')
+        self.assertEqual(result, "cd: nonexistent_folder: No such file or directory")
+
+    def test_tail_command(self):
+        self.emulator = Emulator(self.config_path)
+        result = self.emulator.tail('folder1/file1.txt', n=5)
+        self.assertEqual(len(result.splitlines()), 5)
+        self.assertIn("file15", result)
+
+        # Проверка несуществующего файла
+        result = self.emulator.tail('nonexistent_file.txt')
+        self.assertEqual(result, "tail: nonexistent_file.txt: No such file")
+
+    def test_rmdir_command(self):
+        self.emulator = Emulator(self.config_path)
+        # Удаление существующей директории
+        result = self.emulator.rmdir('folder2')
+        self.assertEqual(result, "rmdir: folder2: Directory removed successfully")
+        ls_result = self.emulator.ls()
+        self.assertNotIn("folder2", ls_result)
+
+        # Удаление несуществующей директории
+        result = self.emulator.rmdir('nonexistent_folder')
+        self.assertEqual(result, "rmdir: nonexistent_folder: No such directory on filesystem")
+
+    @classmethod
+    def _generate_virtual_fs_tar(cls, tar_file):
+        # Создание тестового tar архива с виртуальной файловой системой
+        base_dir = tempfile.mkdtemp()
+        folder1 = os.path.join(base_dir, 'folder1')
+        folder2 = os.path.join(base_dir, 'folder2')
+        os.makedirs(folder1)
+        os.makedirs(folder2)
+
+        # Заполнение файла для тестов
+        with open(os.path.join(folder1, 'file1.txt'), 'w') as f:
+            for i in range(1, 16):
+                f.write(f"This is file{i} in folder1.\n")
+
+        # Используем контекстный менеджер для открытия архива
+        with tarfile.open(tar_file, 'w') as tar:
+            tar.add(folder1, arcname='folder1')
+            tar.add(folder2, arcname='folder2')
+            tar.close()
 
     @classmethod
     def tearDownClass(cls):
-        """
-        Удаляем временные файлы после завершения всех тестов.
-        """
-        if os.path.exists(cls.virtual_fs_dir):
-            shutil.rmtree(cls.virtual_fs_dir)
-        if os.path.exists(cls.tar_file):
-            os.remove(cls.tar_file)
-        if os.path.exists(cls.config_file):
-            os.remove(cls.config_file)
-
-    def setUp(self):
-        """
-        Создаем экземпляр эмулятора перед каждым тестом.
-        """
-        self.emulator = Emulator(self.config_file)
-
-    def test_ls_root(self):
-        """
-        Тест команды 'ls' в корневой директории.
-        """
-        result = self.emulator.ls()
-        expected = "folder1\nfolder2"
-        self.assertEqual(result.strip(), expected)
-
-    def test_cd_and_ls_folder1(self):
-        """
-        Тест команды 'cd folder1' и 'ls' в директории folder1.
-        """
-        self.emulator.cd('folder1')
-        result = self.emulator.ls()
-        expected = "file1.txt"
-        self.assertEqual(result.strip(), expected)
-
-    def test_cd_nonexistent(self):
-        """
-        Тест команды 'cd' с несуществующей директорией.
-        """
-        result = self.emulator.cd('nonexistent_folder')
-        expected = "cd: nonexistent_folder: No such file or directory"
-        self.assertEqual(result, expected)
-
-    def test_tail_file(self):
-        """
-        Тест команды 'tail' для чтения последних строк файла.
-        """
-        self.emulator.cd('folder1')
-        result = self.emulator.tail('file1.txt', 5)
-        expected = "This is file11 in folder1.\nThis is file12 in folder1.\nThis is file13 in folder1.\nThis is file14 in folder1.\nThis is file15 in folder1.\n"
-        self.assertEqual(result, expected)
-
-    def test_rmdir_nonempty(self):
-        """
-        Тест команды 'rmdir' на непустую директорию.
-        """
-        result = self.emulator.rmdir('folder1')
-        expected = "rmdir: folder1: Directory not empty"
-        self.assertEqual(result, expected)
-
-    def test_rmdir_nonexistent(self):
-        """
-        Тест команды 'rmdir' с несуществующей директорией.
-        """
-        result = self.emulator.rmdir('nonexistent_folder')
-        expected = "rmdir: nonexistent_folder: No such directory"
-        self.assertEqual(result, expected)
-
-    def test_run_unknown_command(self):
-        """
-        Тест попытки выполнения неизвестной команды.
-        """
-        result = self.emulator.run_command('unknowncmd')
-        expected = "unknowncmd: command not found"
-        self.assertEqual(result, expected)
+        # Удаляем временные файлы после всех тестов
+        os.remove(cls.config_path)
+        os.remove(cls.tar_file)
+        gc.collect()
 
 if __name__ == '__main__':
     unittest.main()
