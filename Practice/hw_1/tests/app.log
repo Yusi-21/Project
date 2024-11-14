@@ -1,0 +1,24 @@
+2024-11-14 21:16:23,729 - core - DEBUG - Config read: vfs_path=virtual_fs.tar, username=user, hostname=mycomputer
+2024-11-14 21:16:23,752 - core - DEBUG - VFS initialized with updated archive: virtual_fs.tar
+2024-11-14 21:16:23,752 - core - DEBUG - Emulator started
+2024-11-14 21:16:23,752 - core - DEBUG - Changing directory: folder1
+2024-11-14 21:16:23,753 - core - DEBUG - Changing directory: nonexistent_folder
+2024-11-14 21:16:23,757 - core - DEBUG - Config read: vfs_path=virtual_fs.tar, username=user, hostname=mycomputer
+2024-11-14 21:16:23,759 - core - DEBUG - VFS initialized with updated archive: virtual_fs.tar
+2024-11-14 21:16:23,759 - core - DEBUG - Emulator started
+2024-11-14 21:16:23,759 - core - DEBUG - Listing files in current directory: 
+2024-11-14 21:16:23,763 - core - DEBUG - Config read: vfs_path=virtual_fs.tar, username=user, hostname=mycomputer
+2024-11-14 21:16:23,764 - core - DEBUG - VFS initialized with updated archive: virtual_fs.tar
+2024-11-14 21:16:23,764 - core - DEBUG - Emulator started
+2024-11-14 21:16:23,765 - core - DEBUG - Removing directory: folder2/
+2024-11-14 21:16:23,779 - core - DEBUG - Directory folder2 removed from filesystem.
+2024-11-14 21:16:23,808 - core - DEBUG - VFS initialized with updated archive: virtual_fs.tar
+2024-11-14 21:16:23,808 - core - DEBUG - Directory folder2 successfully removed from archive.
+2024-11-14 21:16:23,808 - core - DEBUG - Listing files in current directory: 
+2024-11-14 21:16:23,809 - core - DEBUG - Removing directory: nonexistent_folder/
+2024-11-14 21:16:23,821 - core - DEBUG - VFS initialized with updated archive: virtual_fs.tar
+2024-11-14 21:16:23,825 - core - DEBUG - Config read: vfs_path=virtual_fs.tar, username=user, hostname=mycomputer
+2024-11-14 21:16:23,827 - core - DEBUG - VFS initialized with updated archive: virtual_fs.tar
+2024-11-14 21:16:23,828 - core - DEBUG - Emulator started
+2024-11-14 21:16:23,828 - core - DEBUG - Getting last 5 lines from folder1/file1.txt
+2024-11-14 21:16:23,829 - core - DEBUG - Getting last 10 lines from nonexistent_file.txt
