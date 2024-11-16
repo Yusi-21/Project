@@ -284,38 +284,41 @@ dir /B > files.lst
 ## Решение:
 
 ```Makefile
-# Компилятор GCC
+# Компилятор и флаги
 CC = gcc
-
-# Флаги компиляции для создания исполняемого файла "prog"
 CFLAGS = -o prog
 
 # Исходные файлы
 SRC = prog.c data.c
+OUTPUT = prog
+FILE_LIST = files.lst
+ARCHIVE = distr.zip
 
-# Основная цель, которая включает компиляцию и архивирование
-all: prog archive
+# Основная цель
+all: $(ARCHIVE)
 
-# Цель для компиляции исходных файлов в исполняемый файл
-prog: $(SRC)
-    $(CC) $(SRC) $(CFLAGS)
+# Компиляция программы
+$(OUTPUT): $(SRC)
+	$(CC) $(SRC) $(CFLAGS)
 
-# Цель для создания файла со списком всех файлов в текущем каталоге
-files.lst:
-    dir /B > files.lst
+# Создание списка файлов
+$(FILE_LIST): $(OUTPUT)
+	dir /B > $(FILE_LIST)
 
-# Цель для архивирования всех файлов в текущем каталоге
-archive: files.lst
-    7z a distr.zip *.*
+# Создание архива
+$(ARCHIVE): $(FILE_LIST)
+	powershell Compress-Archive -Path *.* -DestinationPath $(ARCHIVE)
 
-# Цель для очистки проекта от созданных файлов
+# Очистка
 clean:
-    del prog.exe files.lst distr.zip
+	del $(OUTPUT) $(FILE_LIST) $(ARCHIVE)
+
 ```
 
 ## Результат:
 
-![image](https://github.com/user-attachments/assets/b6ddd7bc-5b4d-442d-a573-1d589966d340)
+![image](https://github.com/user-attachments/assets/d89dfa66-74fb-4311-b8b3-771b143d6298)
+
 
 ## Полезные ссылки
 
