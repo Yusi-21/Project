@@ -348,6 +348,37 @@ public class Task2 {
 Загрузиться уже с sda.
 Прислать полный список команд для установки и загрузки, а также скриншот с motd, где фигурируют ваши имя и фамилия.
 
+## Решение
+
+```
+qemu-img create -f qcow2 "C:\Program Files\qemu\images\alpine-disk.qcow2" 500M
+
+C:\Program Files\qemu>qemu-system-x86_64 ^
+ -m 512 ^
+ -boot d ^
+ -cdrom "C:\Program Files\qemu\iso\alpine-standard-3.20.3-x86_64.iso" ^
+ -hda "C:\Program Files\qemu\images\alpine-disk.qcow2" ^
+ -nic user,model=virtio-net-pci ^
+ -accel tcg
+
+setup-alpine
+
+C:\Program Files\qemu>qemu-system-x86_64 ^
+ -m 512 ^
+ -boot c ^
+ -hda "C:\Program Files\qemu\images\alpine-disk.qcow2" ^
+ -nic user,model=virtio-net-pci ^
+ -accel tcg
+
+apk add nano
+nano /etc/motd
+
+reboot
+```
+![1](https://github.com/user-attachments/assets/a6248b7a-92bb-4dde-ae6a-1408ab1f7038)
+
+![alpine](https://github.com/user-attachments/assets/39ca10f0-4ecb-48fa-8d3b-5d11162d1a77)
+
 ## Задача 5
 
 (после разбора на семинаре и написания у доски базовой части эмулятора древней игровой приставки CHIP-8)
