@@ -281,7 +281,46 @@ dir /B > files.lst
 В makefile должны быть, как минимум, следующие задачи: all, clean, archive.
 Обязательно покажите на примере, что уже сделанные подзадачи у вас не перестраиваются.
 
-## Решение:
+## Решение_1:
+
+```Makefile
+# Компилятор и флаги
+CC = gcc
+CFLAGS = -o prog
+
+# Исходные файлы
+SRC = prog.c data.c
+OUTPUT = prog
+FILE_LIST = files.lst
+ARCHIVE = distr.zip
+
+# Основная цель
+all: $(ARCHIVE)
+
+# Компиляция программы
+$(OUTPUT): $(SRC)
+	$(CC) $(SRC) $(CFLAGS)
+
+# Создание списка файлов
+$(FILE_LIST): $(OUTPUT)
+	dir /B > $(FILE_LIST)
+
+# Создание архива
+$(ARCHIVE): $(FILE_LIST)
+	7z a distr.zip *.*
+
+# Очистка
+clean:
+	del $(OUTPUT) $(FILE_LIST) $(ARCHIVE)
+
+```
+
+## Результат:
+
+![image](https://github.com/user-attachments/assets/d5c64b2b-8a67-49b7-9071-edfb88d52acf)
+
+
+## Решение_2:
 
 ```Makefile
 # Компилятор и флаги
