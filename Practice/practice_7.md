@@ -46,7 +46,7 @@
 ```PlantUML
 @startuml
 skinparam lifelineStrategy nosolid
-actor "Студент Юсубов Р.Х." as S
+actor "Студент Абдырахманов Ю." as S
 database Piazza as P
 actor Преподаватель as T
 
@@ -81,7 +81,7 @@ deactivate P
 
 ## Результат
 
-![plantum](https://github.com/user-attachments/assets/0a57d9c6-18c4-4b68-bcb4-6d79c084f1bb)
+![image](https://github.com/user-attachments/assets/6c6b6f15-4e28-4ebe-a6a0-b33be8cbe819)
 
 ## Задача 3
 
