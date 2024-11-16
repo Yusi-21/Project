@@ -65,14 +65,12 @@ mathematics
 ```Python
 import json
 
-
 def parse_civgraph(civgraph_file):
     # Чтение JSON-файла
     with open(civgraph_file, 'r') as file:
         data = json.load(file)
 
     return data
-
 
 def generate_makefile(data, output_file):
     with open(output_file, 'w') as file:
@@ -81,7 +79,6 @@ def generate_makefile(data, output_file):
             dep_str = " ".join(dependencies) if dependencies else ""
             file.write(f"{target}: {dep_str}\n")
             file.write(f"\t@echo {target}\n\n")  # Простое действие для примера
-
 
 def main():
     civgraph_file = "civgraph.json"  # Имя файла с графом зависимостей
@@ -93,7 +90,6 @@ def main():
     # Генерация Makefile
     generate_makefile(data, output_file)
     print(f"Makefile был сгенерирован в {output_file}")
-
 
 if __name__ == "__main__":
     main()
