@@ -377,7 +377,7 @@ reboot
 ```
 ![1](https://github.com/user-attachments/assets/a6248b7a-92bb-4dde-ae6a-1408ab1f7038)
 
-![alpine](https://github.com/user-attachments/assets/39ca10f0-4ecb-48fa-8d3b-5d11162d1a77)
+![382820147-b144b8f9-ea75-4266-9e23-ce90e6204dc8](https://github.com/user-attachments/assets/87e06ea3-1217-40fa-96c5-1a396acb0539)
 
 ## Задача 5
 
