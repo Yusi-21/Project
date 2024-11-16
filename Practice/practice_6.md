@@ -116,7 +116,6 @@ import os
 # Файл для сохранения завершенных задач
 TASKS_FILE = "my_task2.txt"
 
-
 # Загрузка списка завершенных задач из файла
 def load_tasks():
     if os.path.exists(TASKS_FILE):
@@ -124,12 +123,10 @@ def load_tasks():
             return set(f.read().splitlines())
     return set()
 
-
 # Сохранение завершенных задач в файл
 def save_tasks(tasks):
     with open(TASKS_FILE, 'w') as f:
         f.write('\n'.join(tasks))
-
 
 # Загрузка графа зависимостей из JSON-файла
 def load_dependency_graph(filename):
@@ -139,7 +136,6 @@ def load_dependency_graph(filename):
     except Exception as e:
         print(f"Ошибка при загрузке файла {filename}: {e}")
         return {}
-
 
 # Функция генерации Makefile с проверкой на уже выполненные задачи
 def generate_makefile(dependency_graph, target_task):
@@ -166,7 +162,6 @@ def generate_makefile(dependency_graph, target_task):
                 completed_tasks.add(task)
 
         save_tasks(completed_tasks)
-
 
 if __name__ == '__main__':
     # Загружаем граф зависимостей из файла
