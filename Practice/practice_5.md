@@ -370,8 +370,8 @@ C:\Program Files\qemu>qemu-system-x86_64 ^
  -nic user,model=virtio-net-pci ^
  -accel tcg
 
-apk add nano
-nano /etc/motd
+vi /etc/motd
+(после изменений нажмите ```ESC```, потом ```:wq``` чтобы сохранить изменений)
 
 reboot
 ```
