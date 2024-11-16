@@ -189,8 +189,7 @@ import json
 import os
 
 # Файл для сохранения завершенных задач
-TASKS_FILE = "completed_tasks.txt"
-
+TASKS_FILE = "my_task3.txt"
 
 # Загрузка списка завершенных задач из файла
 def load_tasks():
@@ -199,12 +198,10 @@ def load_tasks():
             return set(f.read().splitlines())
     return set()
 
-
 # Сохранение завершенных задач в файл
 def save_tasks(tasks):
     with open(TASKS_FILE, 'w') as f:
         f.write('\n'.join(tasks))
-
 
 # Загрузка графа зависимостей из JSON-файла
 def load_dependency_graph(filename):
@@ -214,7 +211,6 @@ def load_dependency_graph(filename):
     except Exception as e:
         print(f"Ошибка при загрузке файла {filename}: {e}")
         return {}
-
 
 # Функция генерации Makefile с проверкой на уже выполненные задачи
 def generate_makefile(dependency_graph, target_task):
@@ -242,7 +238,6 @@ def generate_makefile(dependency_graph, target_task):
 
         save_tasks(completed_tasks)
 
-
 # Функция для очистки задач
 def clean():
     if os.path.exists(TASKS_FILE):
@@ -250,7 +245,6 @@ def clean():
         print(f"Файл с завершенными задачами {TASKS_FILE} удален.")
     else:
         print("Файл с завершенными задачами не найден. Нечего очищать.")
-
 
 if __name__ == '__main__':
     # Загружаем граф зависимостей из файла
@@ -272,7 +266,9 @@ if __name__ == '__main__':
 
 ## Результат:
 
-![image](https://github.com/user-attachments/assets/034fdb42-bb12-45bb-8b87-b2fab30b8e3c)
+![image](https://github.com/user-attachments/assets/f859e2fe-f19e-4ee9-a5be-d00376455c34)
+
+![image](https://github.com/user-attachments/assets/49079d27-9958-4f4a-be7c-c15d21957e0b)
 
 ## Задача 4
 
