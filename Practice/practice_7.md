@@ -150,11 +150,11 @@ pdflatex zadacha_7.3.tex
 
 ## Результат
 
-1) nw-файл: [merge_sort.nw](merge_sort.nw)
+1) nw-файл: [zadacha_7.3.nw](zadacha_7.3.nw)
 
-2) PDF-файл: [merge_sort.pdf](merge_sort.pdf)
+2) PDF-файл: [zadacha_7.3.pdf](zadacha_7.3.pdf)
 
-3) Исходный код: [merge_sort.tex](merge_sort.tex)
+3) Исходный код: [zadacha_7.3.tex](zadacha_7.3.tex)
 
 ## Дополнительное задание:
 
