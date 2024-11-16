@@ -135,7 +135,7 @@ mergeSort xs = merge (mergeSort left) (mergeSort right)
   where
     (left, right) = splitAt (length xs `div` 2) xs
 \end{lstlisting}
-\footnote{Разработал Юсубов Р.Х.} 
+\footnote{Разработал Абдырахманов Ю.} 
 \section{Заключение}
 
 Алгоритм сортировки слиянием эффективно сортирует элементы, рекурсивно деля их и объединяя.
@@ -144,8 +144,8 @@ mergeSort xs = merge (mergeSort left) (mergeSort right)
 ```
 
 ```bash
-noweb -Llatex merge_sort.nw
-pdflatex merge_sort.tex
+noweb -Llatex zadacha_7.3.nw
+pdflatex zadacha_7.3.tex
 ```
 
 ## Результат
@@ -209,23 +209,8 @@ https://www.doxygen.nl/index.html
 
 https://habr.com/ru/post/252101/
 
-**Sphinx**
-
-https://www.sphinx-doc.org/en/master/
-
-https://sphinx-ru.readthedocs.io/ru/latest/index.html
-
-https://breathe.readthedocs.io/en/latest/
-
-
 **PlantUML**
 
 https://plantuml.com/ru/
 
 https://pdf.plantuml.net/PlantUML_Language_Reference_Guide_ru.pdf
-
-**Mermaid**
-
-https://mermaid.js.org/
-
-https://mermaid.live/edit
