@@ -1,4 +1,4 @@
-## Задача №3
+# Задача №3
 
 ![hw3+](https://github.com/user-attachments/assets/d122441e-444a-409f-839c-d5b0a896edff)
 
@@ -55,20 +55,20 @@
 
 ```
 
-## Запуск команды:
-# Первая команда:
+# Запуск команды:
+## Первая команда:
 ```bash
 python C:\Users\user\PycharmProjects\pythonProject\hw_3\config_transformer.py -o output.conf < C:\Users\user\PycharmProjects\pythonProject\hw_3\examples\math_constants.json
 ```
 
-# Вторая команда:
+## Вторая команда:
 ```bash
 python C:\Users\user\PycharmProjects\pythonProject\hw_3\config_transformer.py -o output.conf < C:\Users\user\PycharmProjects\pythonProject\hw_3\examples\web_server_config.json
 ```
 
 ![result](https://github.com/user-attachments/assets/b895e162-d8d3-461e-9689-96b962908a3b)
 
-# Вернет результат:
+## Вернет результат:
 
 ```plaintext
 var Pi := 3.14159;
@@ -108,7 +108,7 @@ var Radius := 5;
     pytest test_config_transformer.py
     ```
 
-# Вывод:
+## Вывод:
 ![test3](https://github.com/user-attachments/assets/637dbeaf-7779-477a-a336-d038f59ae47e)
 
 ## Примеры конфигураций
