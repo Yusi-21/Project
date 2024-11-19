@@ -41,7 +41,7 @@
 откройте `cmd` и запустите:
 
 ```bash
-python C:\Users\user\PycharmProjects\pythonProject\hw-2\dependency_visualizer.py -p C:\Users\user\Graphviz\bin\dot -n curl -o curl_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
+python C:\Users\user\PycharmProjects\pythonProject\hw_2\dependency_visualizer.py -p C:\Users\user\Graphviz\bin\dot -n curl -o curl_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
 ```
 
 После успешного выполнения вы увидите `.dot` файл в папке, в которой вы работаете:
