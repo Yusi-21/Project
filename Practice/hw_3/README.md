@@ -61,6 +61,12 @@
 python C:\Users\user\PycharmProjects\pythonProject\hw_3\config_transformer.py -o output.conf < C:\Users\user\PycharmProjects\pythonProject\hw_3\examples\math_constants.json
 ```
 
+```bash
+python C:\Users\user\PycharmProjects\pythonProject\hw_3\config_transformer.py -o output.conf < C:\Users\user\PycharmProjects\pythonProject\hw_3\examples\web_server_config.json
+```
+
+![result](https://github.com/user-attachments/assets/b895e162-d8d3-461e-9689-96b962908a3b)
+
 Вернет результат:
 
 ```plaintext
