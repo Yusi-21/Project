@@ -44,7 +44,7 @@
 python C:\Users\user\PycharmProjects\pythonProject\hw-2\dependency_visualizer.py -p C:\Users\user\Graphviz\bin\dot -n curl -o curl_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
 ```
 
-После успешного выполнения вы увидите `.docx` файл в папке, в которой вы работаете:
+После успешного выполнения вы увидите `.dot` файл в папке, в которой вы работаете:
 
 ![image](https://github.com/user-attachments/assets/d036148e-0a57-45b1-9db0-4571494e5096)
 
