@@ -92,25 +92,6 @@ var Radius := 5;
 ```
 ![output-math](https://github.com/user-attachments/assets/2acd30c5-de89-44c0-84df-e8eb05042a72)
 
-## Тестирование
-
-Этот проект использует `pytest` для тестирования. Чтобы запустить тесты:
-
-1. Установите `pytest`, если у вас его еще нет:
-
-    ```bash
-    pip install pytest
-    ```
-
-2. Запустите тесты:
-
-    ```bash
-    pytest test_config_transformer.py
-    ```
-
-## Вывод:
-![test3](https://github.com/user-attachments/assets/637dbeaf-7779-477a-a336-d038f59ae47e)
-
 ## Примеры конфигураций
 
 Ниже приведены примеры конфигураций JSON из разных предметных областей, которые можно использовать с этим инструментом.
@@ -179,4 +160,24 @@ var DefaultPort := 8080;
 }
 ```
 ![output-web](https://github.com/user-attachments/assets/3c5ab985-8595-4be5-b1f7-6abba423decd)
+
+## Тестирование
+
+Этот проект использует `pytest` для тестирования. Чтобы запустить тесты:
+
+1. Установите `pytest`, если у вас его еще нет:
+
+    ```bash
+    pip install pytest
+    ```
+
+2. Запустите тесты:
+
+    ```bash
+    pytest test_config_transformer.py
+    ```
+
+## Вывод:
+![test3](https://github.com/user-attachments/assets/637dbeaf-7779-477a-a336-d038f59ae47e)
+
 
