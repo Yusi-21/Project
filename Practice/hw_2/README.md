@@ -1,5 +1,5 @@
 ## Задание №2
-
+![2+](https://github.com/user-attachments/assets/ed61ced6-dfeb-4ac9-9b0b-ae3287e43c39)
 
 ## Требования
 
