@@ -48,6 +48,14 @@ python C:\Users\user\PycharmProjects\pythonProject\hw-2\dependency_visualizer.py
 
 ![image](https://github.com/user-attachments/assets/d036148e-0a57-45b1-9db0-4571494e5096)
 
+## Результаты:
+
+![2,1](https://github.com/user-attachments/assets/16d5967c-8ce6-4e94-9bd9-28612094a7b0)
+
+![2,4](https://github.com/user-attachments/assets/24b784f8-4eab-4bb2-ab21-a75ef46c4921)
+
+![2,5](https://github.com/user-attachments/assets/4f664fc3-3b08-42f4-bf52-26d3b59b2157)
+
 ## Тестирование
 
 Чтобы запустить тесты и убедиться в корректной работе скрипта, выполните:
