@@ -38,46 +38,30 @@
 
 ## Использование
 
-Запустите скрипт `core.py`, указав путь к файлу конфигурации:
+откройте `cmd` и запустите:
 
 ```bash
-python3 core.py config.xml
+python C:\Users\user\PycharmProjects\pythonProject\hw-2\dependency_visualizer.py -p C:\Users\user\Graphviz\bin\dot -n curl -o curl_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
 ```
 
-После успешного выполнения вы увидите сообщение:
+После успешного выполнения вы увидите `.docx` файл в папке, в которой вы работаете:
 
-```
-Graph generated successfully.
-```
-
-Сгенерированный граф будет сохранен по пути, указанному в `output_path` файла конфигурации.
-
-## Пример
-
-Допустим, у вас есть репозиторий в `/home/user/projects/my_repo`, и вы хотите построить граф коммитов, начиная с тега `v1.0.0`. Ваш `config.xml` будет выглядеть так:
-
-```xml
-<config>
-    <graphviz_path>/usr/bin/dot</graphviz_path>
-    <repo_path>/home/user/projects/my_repo</repo_path>
-    <output_path>/home/user/projects/graph.png</output_path>
-    <tag_name>v1.0.0</tag_name>
-</config>
-```
+![image](https://github.com/user-attachments/assets/d036148e-0a57-45b1-9db0-4571494e5096)
 
 ## Тестирование
 
 Чтобы запустить тесты и убедиться в корректной работе скрипта, выполните:
 
 ```bash
-pytest -v tests.py
+pytest -v test_dependency_visualizer.py
 ```
 
 Вы должны увидеть вывод, подтверждающий успешное прохождение всех тестов.
 
+![test](https://github.com/user-attachments/assets/477a5dce-01f7-424b-aa74-7bb296641f3b)
+
 ## Структура проекта
 
-- **core.py**: Основной скрипт для визуализации графа зависимостей.
-- **tests.py**: Набор тестов для проверки корректности работы функций.
-- **config.xml**: Файл конфигурации с настройками для скрипта.
+- **dependency_visualizer.py**: Основной скрипт для визуализации графа зависимостей.
+- **test_dependency_visualizer.py**: Набор тестов для проверки корректности работы функций.
 - **README.md**: Документация проекта.
