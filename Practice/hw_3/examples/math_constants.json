@@ -1,0 +1,34 @@
+[
+    {
+        "var": {
+            "Pi": 3.14159,
+            "Radius": 5
+        }
+    },
+    {
+        "Circle": {
+            "Area": {
+                "expr": "Pi * Radius * Radius"
+            },
+            "Circumference": {
+                "expr": "2 * Pi * Radius"
+            }
+        }
+    },
+    {
+        "Calculations": [
+            {
+                "Description": "Absolute value of -10",
+                "Result": {
+                    "expr": "abs(-10)"
+                }
+            },
+            {
+                "Description": "Modulo of 10 % 3",
+                "Result": {
+                    "expr": "mod(10, 3)"
+                }
+            }
+        ]
+    }
+]

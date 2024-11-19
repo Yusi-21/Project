@@ -1,0 +1,31 @@
+[
+    {
+        "var": {
+            "DefaultPort": 8080
+        }
+    },
+    {
+        "Server": {
+            "Port": {
+                "expr": "DefaultPort + 1"
+            },
+            "Host": "localhost",
+            "SSL": {
+                "Enabled": false,
+                "Certificate": null
+            },
+            "Endpoints": [
+                {
+                    "Path": "/api",
+                    "Methods": ["GET", "POST"],
+                    "AuthRequired": true
+                },
+                {
+                    "Path": "/health",
+                    "Methods": ["GET"],
+                    "AuthRequired": false
+                }
+            ]
+        }
+    }
+]
