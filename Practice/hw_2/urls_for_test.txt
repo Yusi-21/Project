@@ -1,0 +1,39 @@
+bash
+
+python dependency_visualizer.py -p /usr/bin/dot -n bash -o bash_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
+
+coreutils
+
+python dependency_visualizer.py -p /usr/bin/dot -n coreutils -o coreutils_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
+
+wget
+
+python dependency_visualizer.py -p /usr/bin/dot -n wget -o wget_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
+
+curl
+
+python dependency_visualizer.py -p /usr/bin/dot -n curl -o curl_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
+
+python3
+
+python dependency_visualizer.py -p /usr/bin/dot -n python3 -o python3_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
+
+gcc
+
+python dependency_visualizer.py -p /usr/bin/dot -n gcc -o gcc_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
+
+make
+
+python dependency_visualizer.py -p /usr/bin/dot -n make -o make_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
+
+openssl
+
+python dependency_visualizer.py -p /usr/bin/dot -n openssl -o openssl_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
+
+libc6
+
+python dependency_visualizer.py -p /usr/bin/dot -n libc6 -o libc6_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
+
+git
+
+python dependency_visualizer.py -p /usr/bin/dot -n git -o git_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
