@@ -29,7 +29,7 @@ python C:\Users\user\PycharmProjects\pythonProject\hw_4\assembler.py -i C:\Users
 
 ![assembler-zapusk](https://github.com/user-attachments/assets/a279522f-dfd8-41f6-93b5-46055e446ce6)
 
-### 2. Запуск программы на виртуальной машине
+### 2. Интерпретирование программы
 
 Чтобы итнерпретировать программу, используйте следующий код:
 
