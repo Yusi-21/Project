@@ -65,15 +65,15 @@ pytest test_interpreter.py
 После выполнения тестовой программы (`test_program.asm`), исходный вектор (по адресам памяти с 1000 по 1003) будет содержать:
 
 - Memory initialized: {1000: 5, 1001: 15, 1002: 256, 1003: 7}
-    PC: 0, Code size: 29
+- PC: 0, Code size: 29
 - LOAD_CONST executed: accumulator set to 1000
-    PC: 5, Code size: 29
+- PC: 5, Code size: 29
 - POP_CNT executed: operand at 1000 is 5, popcnt=2, stored at 1000
-    PC: 11, Code size: 29
+- PC: 11, Code size: 29
 - POP_CNT executed: operand at 1001 is 15, popcnt=4, stored at 1001
-    PC: 17, Code size: 29
+- PC: 17, Code size: 29
 - POP_CNT executed: operand at 1002 is 256, popcnt=1, stored at 1002
-    PC: 23, Code size: 29
+- PC: 23, Code size: 29
 - POP_CNT executed: operand at 1003 is 7, popcnt=3, stored at 1003
 
 ![image](https://github.com/user-attachments/assets/7f147693-3d04-4454-b1d2-425958611c95)
