@@ -17,8 +17,6 @@ It supports the following constructs:
 Usage:
     python C:\Users\user\PycharmProjects\pythonProject\hw_3\config_transformer.py -o output.conf < C:\Users\user\PycharmProjects\pythonProject\hw_3\examples\math_constants.json
     
-Example:
-    cat input.json | python config_transformer.py -o output.conf
 """
 
 import argparse
