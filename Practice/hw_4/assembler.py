@@ -10,7 +10,7 @@ Usage:
     python assembler.py -i <input_file> -o <output_file> -l <log_file>
 
 Example:
-    python assembler.py -i source.asm -o program.bin -l assembly_log.csv
+    python C:\Users\user\PycharmProjects\pythonProject\hw_4\assembler.py -i C:\Users\user\PycharmProjects\pythonProject\hw_4\test_program.asm -o test_program.bin -l test_program_log.csv
 """
 
 import argparse
