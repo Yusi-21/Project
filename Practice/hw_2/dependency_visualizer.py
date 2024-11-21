@@ -11,8 +11,8 @@ Usage:
     python dependency_visualizer.py -p <path_to_visualizer> -n <package_name> -o <output_file> -u <repo_url>
 
 Example:
-    python dependency_visualizer.py -p /usr/bin/dot -n bash -o output.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
-"""
+    python C:\Users\user\PycharmProjects\pythonProject\hw_2\dependency_visualizer.py -p C:\Users\user\Graphviz\bin\dot -n bash -o bash_dependencies.dot -u http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/
+    """
 
 import argparse
 import urllib.request
